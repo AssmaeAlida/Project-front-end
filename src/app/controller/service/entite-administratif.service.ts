@@ -8,21 +8,24 @@ import {Observable} from "rxjs";
 })
 export class EntiteAdministratifService {
   private _entiteAdministratif = new EntiteAdministratif();
-  private url = 'http://localhost:8036/api/v1/entite-administratif';
+  private url = 'http://localhost:8036/api/v1/entite-administratif/';
 
   constructor(private http : HttpClient) { }
 public findByCode( code:String):Observable<EntiteAdministratif>{
     return this.http.get<EntiteAdministratif>(this.url + 'code/'+ code);
 }
 public deleteByCode( code:String):Observable<Number>{
-    return this.http.delete<Number>(this.url + 'code/'+ code);
+    return this.http.delete<Number>(this.url + 'code'+ code);
 }
 public save( entiteAdministratif:EntiteAdministratif):Observable<Number>{
-    return this.http.post<Number>(this.url +'/', entiteAdministratif );
+    return this.http.post<Number>(this.url , entiteAdministratif );
 }
 
 
   get entiteAdministratif(): EntiteAdministratif {
+    if (this._entiteAdministratif==null){
+      this._entiteAdministratif=new EntiteAdministratif();
+    }
     return this._entiteAdministratif;
   }
 

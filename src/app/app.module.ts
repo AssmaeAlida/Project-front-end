@@ -8,6 +8,10 @@ import { ExpressionBesoinListComponent } from './view/ExpressionBesoins/expressi
 import { ExpressionBesoinViewComponent } from './view/ExpressionBesoins/expression-besoin-view/expression-besoin-view.component';
 import { ExpressioBesoinEditComponent } from './view/ExpressionBesoins/expressio-besoin-edit/expressio-besoin-edit.component';
 import {HttpClientModule} from '@angular/common/http';
+import { EntiteAdministratifCreateComponent } from './view/EntiteAdministratifs/entite-administratif-create/entite-administratif-create.component';
+import { EntiteAdministratifListComponent } from './view/EntiteAdministratifs/entite-administratif-list/entite-administratif-list.component';
+import { EntiteAdministratifViewComponent } from './view/EntiteAdministratifs/entite-administratif-view/entite-administratif-view.component';
+import { EntiteAdministratifEditComponent } from './view/EntiteAdministratifs/entite-administratif-edit/entite-administratif-edit.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +19,11 @@ import {HttpClientModule} from '@angular/common/http';
     ExpressionBesoinCreateComponent,
     ExpressionBesoinListComponent,
     ExpressionBesoinViewComponent,
-    ExpressioBesoinEditComponent
+    ExpressioBesoinEditComponent,
+    EntiteAdministratifCreateComponent,
+    EntiteAdministratifListComponent,
+    EntiteAdministratifViewComponent,
+    EntiteAdministratifEditComponent
   ],
   imports: [
     BrowserModule,
