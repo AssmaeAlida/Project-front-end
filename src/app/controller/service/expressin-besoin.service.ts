@@ -11,8 +11,11 @@ export class ExpressinBesoinService {
    private _expressinBesoin = new ExpressionBesoin();
    private _expressionBesoins = new Array<ExpressionBesoin>;
    private _url =  'http://localhost:8036/api/v1/expressionbesoin/';
-  public save(expressionBesoin: ExpressionBesoin): Observable<number>{
-     return this._http.post<number>(this._url, expressionBesoin);
+  public save(): Observable<ExpressionBesoin>{
+     return this._http.post<ExpressionBesoin>(this._url, this.expressinBesoin);
+   }
+   public findAll(): Observable<Array<ExpressionBesoin>>{
+     return this._http.get<Array<ExpressionBesoin>>(this._url);
    }
   constructor(private _http: HttpClient) { }
 

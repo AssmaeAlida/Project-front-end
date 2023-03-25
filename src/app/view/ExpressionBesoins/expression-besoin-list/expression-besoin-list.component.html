@@ -1,1 +1,15 @@
-<p>expression-besoin-list works!</p>
+<table class="table">
+  <thead>
+  <th>Code</th>
+  <th>Total</th>
+  <th>DateExpressionBesoin</th>
+
+  </thead>
+  <tbody>
+  <tr *ngFor = "let e of expressionBesoins">
+    <td>{{e.code}}</td>
+    <td>{{e.total}}</td>
+    <td>{{e.dateExpressionBesoin}}</td>
+  </tr>
+  </tbody>
+</table>

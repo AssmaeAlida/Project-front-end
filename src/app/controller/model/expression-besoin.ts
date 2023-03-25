@@ -4,6 +4,6 @@ export class ExpressionBesoin {
   public total!: number;
   public code!: string;
   public dateExpressionBesoin!: Date;
-  public xpressionBesoinProduitList!: string;
+  public expressionBesoinProduitList!: string;
 
 }
