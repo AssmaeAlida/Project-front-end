@@ -18,7 +18,8 @@ import {
 import {
   ExpressionBesoinProduitListComponent
 } from "./view/ExpressionBesoinProduits/expression-besoin-produit-list/expression-besoin-produit-list.component";
-
+import { ProduitCreateComponent } from './view/Produits/produit-create/produit-create.component';
+import { ProduitListComponent } from './view/Produits/produit-list/produit-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,10 @@ import {
     EntiteAdministratifViewComponent,
     EntiteAdministratifEditComponent,
     ExpressionBesoinProduitCreateComponent,
-    ExpressionBesoinProduitListComponent
+    ExpressionBesoinProduitListComponent,
+    ProduitCreateComponent,
+    ProduitListComponent,
+
   ],
   imports: [
     BrowserModule,
