@@ -6,13 +6,12 @@ import {FormsModule} from "@angular/forms";
 import { ExpressionBesoinCreateComponent } from './view/ExpressionBesoins/expression-besoin-create/expression-besoin-create.component';
 import { ExpressionBesoinListComponent } from './view/ExpressionBesoins/expression-besoin-list/expression-besoin-list.component';
 import { ExpressionBesoinViewComponent } from './view/ExpressionBesoins/expression-besoin-view/expression-besoin-view.component';
-import { ExpressioBesoinEditComponent } from './view/ExpressionBesoins/expression-besoin-edit/expressio-besoin-edit.component';
+import { ExpressioBesoinEditComponent } from './view/ExpressionBesoins/expressio-besoin-edit/expressio-besoin-edit.component';
 import {HttpClientModule} from '@angular/common/http';
-
-import { ExpressionBesoinProduitCreateComponent } from './view/ExpressionBesoinProduits/expression-besoin-produit-create/expression-besoin-produit-create.component';
-import { ExpressionBesoinProduitListComponent } from './view/expressionBesoinProduits/expression-besoin-produit-list/expression-besoin-produit-list.component';
-import { ExpressionBesoinProduitViewComponent } from './view/expressionBesoinProduits/expression-besoin-produit-view/expression-besoin-produit-view.component';
-import { ExpressionBesoinProduitEditComponent } from './view/expressionBesoinProduits/expression-besoin-produit-edit/expression-besoin-produit-edit.component';
+import { EntiteAdministratifCreateComponent } from './view/EntiteAdministratifs/entite-administratif-create/entite-administratif-create.component';
+import { EntiteAdministratifListComponent } from './view/EntiteAdministratifs/entite-administratif-list/entite-administratif-list.component';
+import { EntiteAdministratifViewComponent } from './view/EntiteAdministratifs/entite-administratif-view/entite-administratif-view.component';
+import { EntiteAdministratifEditComponent } from './view/EntiteAdministratifs/entite-administratif-edit/entite-administratif-edit.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +20,10 @@ import { ExpressionBesoinProduitEditComponent } from './view/expressionBesoinPro
     ExpressionBesoinListComponent,
     ExpressionBesoinViewComponent,
     ExpressioBesoinEditComponent,
-    ExpressionBesoinProduitCreateComponent,
-    ExpressionBesoinProduitListComponent,
-    ExpressionBesoinProduitViewComponent,
-    ExpressionBesoinProduitEditComponent
+    EntiteAdministratifCreateComponent,
+    EntiteAdministratifListComponent,
+    EntiteAdministratifViewComponent,
+    EntiteAdministratifEditComponent
   ],
   imports: [
     BrowserModule,
