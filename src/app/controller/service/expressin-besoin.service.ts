@@ -10,9 +10,14 @@ import {Environment} from "@angular/cli/lib/config/workspace-schema";
 export class ExpressinBesoinService {
    private _expressinBesoin = new ExpressionBesoin();
    private _expressionBesoins = new Array<ExpressionBesoin>;
-   private _url =  'http://localhost:8036/api/v1/expressionbesoin/';
-  public save(): Observable<ExpressionBesoin>{
+   private _url =  'http://localhost:8036/api/v1/expressionbesoin';
+
+  public save(expressionBesoin: ExpressionBesoin): Observable<ExpressionBesoin>{
      return this._http.post<ExpressionBesoin>(this._url, this.expressinBesoin);
+   }
+   public deleteByCode(code: string): Observable<number>{
+    console.log('urll==>' +this._url +'code/' + code);
+     return this._http.delete<number>(this._url + 'code/' + this.expressinBesoin.code);
    }
    public findAll(): Observable<Array<ExpressionBesoin>>{
      return this._http.get<Array<ExpressionBesoin>>(this._url);

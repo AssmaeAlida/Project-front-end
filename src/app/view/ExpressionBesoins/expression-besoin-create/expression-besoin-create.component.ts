@@ -14,8 +14,8 @@ export class ExpressionBesoinCreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public save(): void {
-    this.expressionBesoinService.save().subscribe(data => {
+  public save(expressionBesoin: ExpressionBesoin): void {
+    this.expressionBesoinService.save(expressionBesoin).subscribe(data => {
       if (data != null) {
         alert('SAVE SUCCESS');
       } else {

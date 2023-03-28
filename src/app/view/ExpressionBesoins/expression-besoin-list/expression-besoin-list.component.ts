@@ -16,6 +16,16 @@ ngOnInit(): void {
   public findAll():void{
     this.expressionBesoinService.findAll().subscribe(data => this.expressionBesoins = data)
   }
+  public deleteByCode(expressionBesoin: ExpressionBesoin , index: number):void{
+     console.log('haa code' + expressionBesoin.code);
+    this.expressionBesoinService.deleteByCode(expressionBesoin.code).subscribe(data => {
+      if (data > 0){
+   this.expressionBesoins.splice(index, 1);
+      }else{
+        alert('DEL ERROR');
+      }
+    });
+  }
   get expressinBesoin(): ExpressionBesoin {
 
     return this.expressionBesoinService.expressinBesoin;
