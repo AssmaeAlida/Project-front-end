@@ -1,0 +1,17 @@
+<table class="table">
+  <thead>
+  <th>Code</th>
+  <th>Quantite</th>
+  <th>QuantiteAccordee</th>
+  <th>Actions</th>
+
+  </thead>
+  <tbody>
+  <tr *ngFor = "let e of expressionBesoinProduits; index as i">
+    <td>{{e.code}}</td>
+    <td>{{e.quantite}}</td>
+    <td>{{e.quantiteAccordee}}</td>
+    <td><span (click)="deleteByCode(e,i)" class="fa fa-trash btn btn-sm"></span> </td>
+  </tr>
+  </tbody>
+</table>
