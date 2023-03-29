@@ -8,6 +8,7 @@ import {Observable} from "rxjs";
 })
 export class EntiteAdministratifService {
   private _entiteAdministratif = new EntiteAdministratif();
+  private _entiteAdministratifs=new Array<EntiteAdministratif>();
   private url = 'http://localhost:8036/api/v1/entite-administratif/';
 
   constructor(private http : HttpClient) { }
@@ -17,9 +18,14 @@ public findByCode( code:String):Observable<EntiteAdministratif>{
 public deleteByCode( code:String):Observable<Number>{
     return this.http.delete<Number>(this.url + 'code'+ code);
 }
-public save( entiteAdministratif:EntiteAdministratif):Observable<Number>{
-    return this.http.post<Number>(this.url , entiteAdministratif );
+public save( entiteAdministratif:EntiteAdministratif):Observable<number>{
+    this._entiteAdministratif=entiteAdministratif;
+  this.entiteAdministratifs.push(this._entiteAdministratif);
+  return this.http.post<number>(this.url ,this._entiteAdministratif );
 }
+  public findAll():Observable<Array<EntiteAdministratif>>{
+    return this.http.get<Array<EntiteAdministratif>>(this.url)
+  }
 
 
   get entiteAdministratif(): EntiteAdministratif {
@@ -31,5 +37,16 @@ public save( entiteAdministratif:EntiteAdministratif):Observable<Number>{
 
   set entiteAdministratif(value: EntiteAdministratif) {
     this._entiteAdministratif = value;
+  }
+
+  get entiteAdministratifs(): EntiteAdministratif[] {
+    if (this._entiteAdministratifs==null){
+      this._entiteAdministratifs=new Array<EntiteAdministratif>()
+    }
+    return this._entiteAdministratifs;
+  }
+
+  set entiteAdministratifs(value: EntiteAdministratif[]) {
+    this._entiteAdministratifs = value;
   }
 }

@@ -1,1 +1,17 @@
-<p>entite-administratif-list works!</p>
+
+<table class="table">
+  <thead>
+  <th>code</th>
+  <th>libelle</th>
+  <th>categorieId</th>
+
+  </thead>
+  <tbody>
+  <tr *ngFor = "let e of entiteAdministratifs">
+    <td>{{e.code}}</td>
+    <td>{{e.libelle}}</td>
+    <td>{{e.categorieEntiteAdministratif}}</td>
+  </tr>
+  </tbody>
+</table>
+
