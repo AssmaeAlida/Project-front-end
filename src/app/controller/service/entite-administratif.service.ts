@@ -16,11 +16,11 @@ public findByCode( code:String):Observable<EntiteAdministratif>{
     return this.http.get<EntiteAdministratif>(this.url + 'code/'+ code);
 }
 public deleteByCode( code:String):Observable<Number>{
-    return this.http.delete<Number>(this.url + 'code'+ code);
+    return this.http.delete<Number>(this.url + 'code/'+ code);
 }
 public save( entiteAdministratif:EntiteAdministratif):Observable<number>{
     this._entiteAdministratif=entiteAdministratif;
-  this.entiteAdministratifs.push(this._entiteAdministratif);
+  this.entiteAdministratifs.push({...this._entiteAdministratif});
   return this.http.post<number>(this.url ,this._entiteAdministratif );
 }
   public findAll():Observable<Array<EntiteAdministratif>>{
