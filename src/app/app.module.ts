@@ -20,6 +20,8 @@ import {
 } from "./view/ExpressionBesoinProduits/expression-besoin-produit-list/expression-besoin-produit-list.component";
 import { ProduitCreateComponent } from './view/Produits/produit-create/produit-create.component';
 import { ProduitListComponent } from './view/Produits/produit-list/produit-list.component';
+import { CategorieEntiteAdministratifCreateComponent } from './view/CategorieEntiteAdministratif/categorie-entite-administratif-create/categorie-entite-administratif-create.component';
+import { CategorieEntiteAdministratifListComponent } from './view/CategorieEntiteAdministratif/categorie-entite-administratif-list/categorie-entite-administratif-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +36,8 @@ import { ProduitListComponent } from './view/Produits/produit-list/produit-list.
     ExpressionBesoinProduitListComponent,
     ProduitCreateComponent,
     ProduitListComponent,
+    CategorieEntiteAdministratifCreateComponent,
+    CategorieEntiteAdministratifListComponent,
 
   ],
   imports: [
