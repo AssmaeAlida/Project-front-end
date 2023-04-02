@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="card-header">Creation des expressions besoins produit</div>
+  <div class="card-body">
+
+    <div class="form-group">
+      <label for="code">code</label>
+      <input id="code" type="text" class="form-control" [(ngModel)]="expressinBesoinProduit.code">
+    </div>
+
+    <div class="form-group">
+      <label for="quantite">quantite</label>
+      <input id="quantite" type="text" class="form-control" [(ngModel)]="expressinBesoinProduit.quantite">
+    </div>
+
+    <div class="form-group">
+      <label for="quantiteAccordee">quantiteAccordee</label>
+      <input id="quantiteAccordee" type="text" class="form-control" [(ngModel)]="expressinBesoinProduit.quantiteAccordee">
+    </div>
+
+  </div>
+  <div class="card-footer"></div>
+  <button class="btn btn-success " (click)="save(expressinBesoinProduit)">Ajouter</button>
+</div>
+
+
+

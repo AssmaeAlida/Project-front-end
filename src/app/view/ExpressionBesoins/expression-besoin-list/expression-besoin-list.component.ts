@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {ExpressionBesoin} from '../../../controller/model/expression-besoin';
-import {ExpressinBesoinService} from 'src/app/controller/service/expressin-besoin.service';
+import {ExpressionBesoin} from 'src/app/controller/model/expression-besoin';
+import {ExpressionBesoinService} from 'src/app/controller/service/expression-besoin.service';
 
 @Component({
   selector: 'app-expression-besoin-list',
@@ -8,7 +8,7 @@ import {ExpressinBesoinService} from 'src/app/controller/service/expressin-besoi
   styleUrls: ['./expression-besoin-list.component.css']
 })
 export class ExpressionBesoinListComponent implements OnInit{
-  constructor(private expressionBesoinService: ExpressinBesoinService) {
+  constructor(private expressionBesoinService: ExpressionBesoinService) {
   }
 ngOnInit(): void {
     this.findAll();
@@ -16,13 +16,23 @@ ngOnInit(): void {
   public findAll():void{
     this.expressionBesoinService.findAll().subscribe(data => this.expressionBesoins = data)
   }
-  get expressinBesoin(): ExpressionBesoin {
+  public deleteByCode(expressionBesoin: ExpressionBesoin , index: number):void{
+     console.log('haa code' + expressionBesoin.code);
+    this.expressionBesoinService.deleteByCode(expressionBesoin.code).subscribe(data => {
+      if (data > 0){
+   this.expressionBesoins.splice(index, 1);
+      }else{
+        alert('DEL ERROR');
+      }
+    });
+  }
+  get expressionBesoin(): ExpressionBesoin {
 
-    return this.expressionBesoinService.expressinBesoin;
+    return this.expressionBesoinService.expressionBesoin;
   }
 
-  set expressinBesoin(value: ExpressionBesoin) {
-    this.expressionBesoinService.expressinBesoin = value;
+  set expressionBesoin(value: ExpressionBesoin) {
+    this.expressionBesoinService.expressionBesoin = value;
   }
 
   get expressionBesoins(): Array<ExpressionBesoin> {

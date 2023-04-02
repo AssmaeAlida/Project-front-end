@@ -1,21 +1,26 @@
 import {Component, OnInit} from '@angular/core';
-import {ExpressinBesoinService} from 'src/app/controller/service/expressin-besoin.service';
+import {ExpressionBesoinService} from 'src/app/controller/service/expression-besoin.service';
 import {ExpressionBesoin} from 'src/app/controller/model/expression-besoin';
+
+
 
 @Component({
   selector: 'app-expression-besoin-create',
   templateUrl: './expression-besoin-create.component.html',
   styleUrls: ['./expression-besoin-create.component.css']
 })
-export class ExpressionBesoinCreateComponent implements OnInit {
-  constructor(private expressionBesoinService: ExpressinBesoinService) {
+export class ExpressionBesoinCreateComponent implements OnInit{
+
+
+
+
+  constructor(private expressionBesoinService: ExpressionBesoinService) {
   }
 
   ngOnInit(): void {
   }
-
-  public save(): void {
-    this.expressionBesoinService.save().subscribe(data => {
+  public save(expressionBesoin: ExpressionBesoin): void {
+    this.expressionBesoinService.save(expressionBesoin).subscribe(data => {
       if (data != null) {
         alert('SAVE SUCCESS');
       } else {
@@ -23,14 +28,13 @@ export class ExpressionBesoinCreateComponent implements OnInit {
       }
     });
   }
+  get expressionBesoin(): ExpressionBesoin {
 
-  get expressinBesoin(): ExpressionBesoin {
-
-    return this.expressionBesoinService.expressinBesoin;
+    return this.expressionBesoinService.expressionBesoin;
   }
 
-  set expressinBesoin(value: ExpressionBesoin) {
-    this.expressionBesoinService.expressinBesoin = value;
+  set expressionBesoin(value: ExpressionBesoin) {
+    this.expressionBesoinService.expressionBesoin = value;
   }
 
   get expressionBesoins(): Array<ExpressionBesoin> {
@@ -38,9 +42,7 @@ export class ExpressionBesoinCreateComponent implements OnInit {
     return this.expressionBesoinService.expressionBesoins;
   }
 
-  set expressionBesoins(value: Array<ExpressionBesoin>) {
+  set expressionBesoinProduits(value: Array<ExpressionBesoin>) {
     this.expressionBesoinService.expressionBesoins = value;
   }
-
-
 }

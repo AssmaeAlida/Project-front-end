@@ -1,0 +1,15 @@
+<table class="table">
+  <thead>
+  <th>Code</th>
+  <th>Libelle</th>
+  <th>Actions</th>
+
+  </thead>
+  <tbody>
+  <tr *ngFor = "let p of produits; index as i">
+    <td>{{p.code}}</td>
+    <td>{{p.libelle}}</td>
+    <td><span (click)="deleteByCode(p,i)" class="fa fa-trash btn btn-sm"></span> </td>
+  </tr>
+  </tbody>
+</table>

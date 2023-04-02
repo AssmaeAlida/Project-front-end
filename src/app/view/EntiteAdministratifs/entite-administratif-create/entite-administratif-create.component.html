@@ -1,0 +1,43 @@
+<div class="row">
+
+    <div class="card my-3">
+      <div class="card-header text-secondary text-center title">les Entites
+        Administratifs
+      </div>
+      <div class="card-body">
+
+        <div class="form-group">
+          <label for="Code" class="text-warning">Code</label>
+          <input id="Code" type="text" class="form-control" [(ngModel)]="entiteAdministratif.code">
+        </div>
+
+        <div class="form-group">
+          <label for="libelle" class="text-warning">libelle</label>
+          <input id="libelle" type="text" class="form-control" [(ngModel)]="entiteAdministratif.libelle">
+        </div>
+        <div class="card-header text-secondary text-center title">la categorie de  l'Entite
+          Administratif
+        </div>
+        <div class="card-body">
+         <div class="row ">
+           <div class="col-6 ">
+          <div class="form-group">
+            <label for="ccode" class="text-warning">Code</label>
+            <input id="ccode" type="text" class="form-control" [(ngModel)]="categorieEntiteAdministratif.code">
+          </div></div>
+          <div class="col-6 ">
+          <div class="form-group">
+            <label for="liibelle" class="text-warning">libelle</label>
+            <input id="liibelle" type="text" class="form-control" [(ngModel)]="categorieEntiteAdministratif.libelle">
+          </div></div>
+
+         </div></div>
+
+      </div>
+      <div class="card-footer"></div>
+      <button class="btn btn-primary " (click)=save(entiteAdministratif)>ajouter</button>
+    </div>
+
+
+</div>
+
