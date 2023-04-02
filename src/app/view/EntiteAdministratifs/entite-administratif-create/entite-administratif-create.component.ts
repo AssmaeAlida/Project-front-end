@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {EntiteAdministratifService} from "../../../controller/service/entite-administratif.service";
 import {EntiteAdministratif} from "../../../controller/model/entite-administratif.model";
 import {Subscriber} from "rxjs";
+import {CategorieEntiteAdministratif} from "../../../controller/model/categorie-entite-administratif.model";
 
 @Component({
   selector: 'app-entite-administratif-create',
@@ -52,5 +53,13 @@ export class EntiteAdministratifCreateComponent implements OnInit {
 
   set entiteAdministratifs(value: EntiteAdministratif[]) {
     this.entiteAdministratifService.entiteAdministratifs = value;
+  }
+  get categorieEntiteAdministratif(): CategorieEntiteAdministratif {
+
+    return this.entiteAdministratifService.categorieEntiteAdministratif;
+  }
+
+  set categorieEntiteAdministratif(value: CategorieEntiteAdministratif) {
+    this.entiteAdministratifService.categorieEntiteAdministratif = value;
   }
 }

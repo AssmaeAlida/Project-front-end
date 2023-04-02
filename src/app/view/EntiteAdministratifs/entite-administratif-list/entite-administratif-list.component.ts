@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {EntiteAdministratif} from "../../../controller/model/entite-administratif.model";
 import {EntiteAdministratifService} from "../../../controller/service/entite-administratif.service";
 import {ExpressionBesoinProduit} from "../../../controller/model/expression-besoin-produit";
+import {CategorieEntiteAdministratif} from "../../../controller/model/categorie-entite-administratif.model";
 
 @Component({
   selector: 'app-entite-administratif-list',
@@ -43,5 +44,12 @@ export class EntiteAdministratifListComponent implements OnInit{
   set entiteAdministratifs(value: EntiteAdministratif[]) {
     this.entiteAdministratifService.entiteAdministratifs = value;
   }
+  get categorieEntiteAdministratif(): CategorieEntiteAdministratif {
 
+    return this.entiteAdministratifService.categorieEntiteAdministratif;
+  }
+
+  set categorieEntiteAdministratif(value: CategorieEntiteAdministratif) {
+    this.entiteAdministratifService.categorieEntiteAdministratif = value;
+  }
 }
