@@ -15,10 +15,13 @@
         </div>
 
         <div class="form-group">
-          <label for="categorieAppelAchat" class="text-danger">Categorie</label>
-          <input id="categorieAppelAchat" type="text" class="form-control"
-                 [(ngModel)]="appelAchat.categorieAppelAchat">
-        </div>
+          <label for="categorieAppelAchat" class="text-danger">Categorie </label>
+
+          <select id="categorieAppelAchat" [(ngModel)]="appelAchat.categorieAppelAchat">
+            <option value="bonDeCommande">Bon de commande</option>
+            <option value="marche">Marche</option>
+          </select>
+          </div>
 
         <div class="form-group">
           <label for="totale" class="text-danger">Totale</label>
