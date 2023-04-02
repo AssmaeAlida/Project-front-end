@@ -29,6 +29,12 @@ export class AppelAchatProduitCreateComponent implements OnInit{
   set produit(value: Produit) {
     this._appelAchatProduitService.produit = value;
   }
+  get appelAchatProduit(): AppelAchatProduit{
+    return this._appelAchatProduitService.appelAchatProduit;
+  }
+  set appelAchatProduit(value: AppelAchatProduit) {
+    this._appelAchatProduitService.appelAchatProduit = value;
+  }
   get AppelAchat(): AppelAchat {
     return this._appelAchatProduitService.AppelAchat;
   }

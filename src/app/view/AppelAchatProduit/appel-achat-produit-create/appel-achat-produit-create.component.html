@@ -1,1 +1,34 @@
 
+    <div class="card">
+      <div class="card-header text-dark text-center ">Appel achat produit
+      </div>
+      <div class="card-body">
+
+        <div class="form-group">
+          <label for="produit" class="text-danger">Produit</label>
+          <input id="produit" type="text" class="form-control"
+                 [(ngModel)]="appelAchatProduit.produit">
+        </div>
+        <div class="form-group">
+          <label for="quantite" class="text-danger">Quantite</label>
+          <input id="quantite" type="text" class="form-control" [(ngModel)]="appelAchatProduit.quantite">
+        </div>
+
+        <div class="form-group">
+          <label for="quantiteLivraison" class="text-danger">Quantite Livraison</label>
+          <input id="quantiteLivraison" type="text" class="form-control"
+                 [(ngModel)]="appelAchatProduit.quantiteLivraison">
+        </div>
+
+        <div class="form-group">
+          <label for="quantiteReception" class="text-danger">Quantite Reception</label>
+          <input id="quantiteReception" type="text" class="form-control"
+                 [(ngModel)]="appelAchatProduit.quantiteReception">
+        </div>
+
+      </div>
+        <div class="card-footer"></div>
+        <button class="btn btn-primary " (click)=save(appelAchatProduit)>ajouter</button>
+      </div>
+
+

@@ -1,1 +1,19 @@
-<p>appel-achat-produit-list works!</p>
+<table class="table table-hover">
+  <thead>
+  <th>Produit</th>
+  <th>Quantite</th>
+  <th>Quantite Livraison</th>
+  <th>Quantite Reception</th>
+
+
+  </thead>
+  <tbody>
+  <tr *ngFor = "let e of appelAchatProduits; index as i">
+    <td>{{e.produit}}</td>
+    <td>{{e.quantite}}</td>
+    <td>{{e.quantiteLivraison}}</td>
+    <td>{{e.quantiteReception}}</td>
+
+  </tr>
+  </tbody>
+</table>

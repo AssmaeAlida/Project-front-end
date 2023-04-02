@@ -22,6 +22,8 @@ import {ExpressionBesoinProduitCreateComponent} from "./view/ExpressionBesoinPro
 import {ExpressionBesoinProduitListComponent} from "./view/ExpressionBesoinProduits/expression-besoin-produit-list/expression-besoin-produit-list.component";
 import { ProduitCreateComponent } from './view/Produits/produit-create/produit-create.component';
 import { ProduitListComponent } from './view/Produits/produit-list/produit-list.component';
+import {AppelAchatCreateComponent} from "./view/AppelAchat/appel-achat-create/appel-achat-create.component";
+
 
 @NgModule({
   declarations: [
@@ -44,6 +46,10 @@ import { ProduitListComponent } from './view/Produits/produit-list/produit-list.
     ExpressionBesoinProduitListComponent,
     ProduitCreateComponent,
     ProduitListComponent,
+    AppelAchatCreateComponent,
+    AppelAchatProduitCreateComponent,
+    AppelAchatProduitListComponent,
+
   ],
   imports: [
     BrowserModule,

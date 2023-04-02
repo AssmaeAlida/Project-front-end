@@ -1,38 +1,37 @@
-<div class="row">
-  <div class="col-md-6">
-    <div class="card-my-3">
-      <div class="card-header text-secondary text-center title">Appel Achat
+
+    <div class="card">
+      <div class="card-header text-dark text-center ">L'Appel Achat
       </div>
       <div class="card-body">
 
         <div class="form-group">
-          <label for="ref" class="text-warning">Ref</label>
+          <label for="ref" class="text-danger">Ref</label>
           <input id="ref" type="text" class="form-control" [(ngModel)]="appelAchat.ref">
         </div>
 
         <div class="form-group">
-          <label for="dateAppelAchat" class="text-warning">dateAppelAchat</label>
+          <label for="dateAppelAchat" class="text-danger">Date Appel Achat</label>
           <input id="dateAppelAchat" type="text" class="form-control" [(ngModel)]="appelAchat.dateAppelAchat">
         </div>
 
         <div class="form-group">
-          <label for="categorieAppelAchat" class="text-warning">Categorie</label>
+          <label for="categorieAppelAchat" class="text-danger">Categorie</label>
           <input id="categorieAppelAchat" type="text" class="form-control"
                  [(ngModel)]="appelAchat.categorieAppelAchat">
         </div>
 
         <div class="form-group">
-          <label for="totale" class="text-warning">Categorie</label>
+          <label for="totale" class="text-danger">Totale</label>
           <input id="totale" type="text" class="form-control"
                  [(ngModel)]="appelAchat.totale">
         </div>
-
+      </div>
       <div class="card-footer"></div>
-      <button class="btn btn-primary " (click)=save(appelAchat)>ajouter</button>
+      <button class="btn btn-success " (click)=save(appelAchat)>confirmer</button>
     </div>
-    </div>
-    </div>
-    </div>
+
+
+
 
 
 
