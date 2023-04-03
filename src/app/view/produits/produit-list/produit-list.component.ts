@@ -10,6 +10,9 @@ import {Produit} from 'src/app/controller/model/produit.model';
 export class ProduitListComponent implements OnInit{
 constructor(private produitService:ProduitService) {
 }
+  ngOnInit():void {
+    this.findAll();
+  }
   public findAll():void{
     this.produitService.findAll().subscribe(data => this.produits = data)
   }
@@ -24,7 +27,6 @@ constructor(private produitService:ProduitService) {
     });
   }
   get produit(): Produit {
-
     return this.produitService.produit;
   }
 
@@ -41,7 +43,5 @@ constructor(private produitService:ProduitService) {
     this.produitService.produits = value;
   }
 
-ngOnInit():void {
-  this.findAll();
-}
+
 }

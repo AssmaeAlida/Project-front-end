@@ -1,5 +1,5 @@
 <div class="card">
-  <div class="card-header">Creation des expressions besoins produit</div>
+  <div class="card-header">Creation des expressions besoins </div>
   <div class="card-body">
 
     <div class="form-group">
@@ -8,20 +8,60 @@
     </div>
 
     <div class="form-group">
-      <label for="total">total</label>
-      <input id="total" type="text" class="form-control" [(ngModel)]="expressionBesoin.total">
-    </div>
-
-    <div class="form-group">
       <label for="dateExpressionBesoin">dateExpressionBesoin</label>
       <input id="dateExpressionBesoin" type="text" class="form-control" [(ngModel)]="expressionBesoin.dateExpressionBesoin">
     </div>
 
+
+    <div class="card">
+      <div class="card-header">Ajouter Produit</div>
+
+
+      <div class="card-body">
+      <div class="row">
+        <div class="col-md-6"><label>Produit</label>
+          <input type="text" class="form-control" [(ngModel)]="expressionBesoinProduit.produit">
+        </div>
+      </div>
+        <div class="row">
+          <div class="col-md-6"><label>Quantite</label>
+            <input type="number" class="form-control" [(ngModel)]="expressionBesoinProduit.quantite">
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card-footer" >
+        <button class="btn btn-outline-danger " (click)="addExpressionBesoinProduit()">+</button>
+      </div>
   </div>
 
-  <div class="card-footer"></div>
+    <div class="card">
+      <div class="card-header">liste des Produits</div>
+      <div class="card-body">
+       <table class="table table-hover table table-striped">
+         <thead>
+         <th>Produit</th>
+         <th>Quantite</th>
+
+         </thead>
+         <tbody>
+         <tr *ngFor = "let e of expressionBesoin.expressionBesoinsProduits">
+           <td>{{e.produit}}</td>
+           <td>{{e.quantite}}</td>
+         </tr>
+         </tbody>
+       </table>
+
+      </div>
+
+      <div class="card-footer" >
+
+      </div>
+    </div>
+
+  <div class="card-footer">
   <button class="btn btn-success " (click)= "save(expressionBesoin)">Ajouter</button>
+  </div>
 </div>
-
-
-
+</div>

@@ -34,6 +34,8 @@ private url='http://localhost:8036/api/v1/produit/'
     this._produits = value;
   }
   public save (produit:Produit):Observable<Produit>{
+   this._produit=produit;
+    this.produits.push(this._produit);
   return this._http.post<Produit>(this.url,this.produit);
   }
   public findAll():Observable<Array<Produit>>{

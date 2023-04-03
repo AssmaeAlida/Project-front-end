@@ -14,7 +14,7 @@ ngOnInit(): void {
     this.findAll();
 }
   public findAll():void{
-    this.expressionBesoinService.findAll().subscribe(data => this.expressionBesoins = data)
+    this.expressionBesoinService.findAll().subscribe(data => this.expressionBesoins = data);
   }
   public deleteByCode(expressionBesoin: ExpressionBesoin , index: number):void{
      console.log('haa code' + expressionBesoin.code);
