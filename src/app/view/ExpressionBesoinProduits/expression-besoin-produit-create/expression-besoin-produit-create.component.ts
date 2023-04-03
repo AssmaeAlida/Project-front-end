@@ -31,7 +31,7 @@ export class ExpressionBesoinProduitCreateComponent implements OnInit{
     return this.expressionBesoinProduitService.expressionBesoinProduit;
   }
 
-  set expressinBesoinProduit(value: ExpressionBesoinProduit) {
+  set expressinBesoinProduit(value : ExpressionBesoinProduit) {
     this.expressionBesoinProduitService.expressionBesoinProduit = value;
   }
 

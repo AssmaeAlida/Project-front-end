@@ -1,17 +1,18 @@
 
-<table class="table">
+<table class="table table-bordered table-hover my-3" *ngIf="entiteAdministratifs.length!=0">
   <thead>
   <th>code</th>
   <th>libelle</th>
-  <th>categorieId</th>
+  <th>categorieEntiteAdministratifId</th>
+  <th>Action</th>
 
   </thead>
   <tbody>
-  <tr *ngFor = "let e of entiteAdministratifs">
+  <tr *ngFor = "let e of entiteAdministratifs;index as i">
     <td>{{e.code}}</td>
     <td>{{e.libelle}}</td>
     <td>{{e.categorieEntiteAdministratif}}</td>
+    <td><span (click)="deleteByCode(e,i)" class="fa fa-trash btn btn-sm"></span> </td>
   </tr>
   </tbody>
 </table>
-

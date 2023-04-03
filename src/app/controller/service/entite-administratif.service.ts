@@ -21,7 +21,7 @@ public deleteByCode( code:String):Observable<Number>{
 public save( entiteAdministratif:EntiteAdministratif):Observable<number>{
     this._entiteAdministratif=entiteAdministratif;
   this.entiteAdministratifs.push(this._entiteAdministratif);
-  return this.http.post<number>(this.url ,this.entiteAdministratif );
+  return this.http.post<number>(this.url ,this._entiteAdministratif );
 }
   public findAll():Observable<Array<EntiteAdministratif>>{
     return this.http.get<Array<EntiteAdministratif>>(this.url)
