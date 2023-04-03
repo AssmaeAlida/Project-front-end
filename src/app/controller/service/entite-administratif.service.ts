@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {EntiteAdministratif} from "../model/entite-administratif.model";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {CategorieEntiteAdministratif} from "../model/categorie-entite-administratif.model";
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,9 @@ export class EntiteAdministratifService {
   private _entiteAdministratif = new EntiteAdministratif();
   private _entiteAdministratifs=new Array<EntiteAdministratif>();
   private url = 'http://localhost:8036/api/v1/entite-administratif/';
+
+  private _categorieEntiteAdministratif = new CategorieEntiteAdministratif();
+
 
   constructor(private http : HttpClient) { }
 public findByCode( code:String):Observable<EntiteAdministratif>{
@@ -48,5 +52,16 @@ public save( entiteAdministratif:EntiteAdministratif):Observable<number>{
 
   set entiteAdministratifs(value: EntiteAdministratif[]) {
     this._entiteAdministratifs = value;
+  }
+
+  get categorieEntiteAdministratif(): CategorieEntiteAdministratif {
+    if (this._categorieEntiteAdministratif==null){
+      this._categorieEntiteAdministratif=new CategorieEntiteAdministratif()
+    }
+    return this._categorieEntiteAdministratif;
+  }
+
+  set categorieEntiteAdministratif(value: CategorieEntiteAdministratif) {
+    this._categorieEntiteAdministratif = value;
   }
 }
