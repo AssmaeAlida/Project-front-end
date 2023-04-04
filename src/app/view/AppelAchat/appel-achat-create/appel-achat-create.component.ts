@@ -10,32 +10,35 @@ import {CategorieAppelAchat} from "../../../controller/model/categorie-appel-ach
 })
 export class AppelAchatCreateComponent implements OnInit {
 
-  constructor(private _appelAchatService: AppelAchatService) {}
+  constructor(private appelAchatService: AppelAchatService) {}
 
   ngOnInit(): void{}
 
   public save(appelAchat: AppelAchat): void{
-    this._appelAchatService.save(appelAchat).subscribe(data => {
+    this.appelAchatService.save(appelAchat).subscribe(data => {
       if(data != null)
         alert('save succes');
       else
         alert('save error')
     });
   }
+  public addAppelAchatProduit(): void{
+    this.appelAchatService.addAppelAchatProduit();
+  }
   get appelAchat(): AppelAchat {
-    return this._appelAchatService.appelAchat;
+    return this.appelAchatService.appelAchat;
   }
 
   set appelAchat(value: AppelAchat) {
-    this._appelAchatService.appelAchat = value;
+    this.appelAchatService.appelAchat = value;
   }
 
   get categorieAppelAchat(): CategorieAppelAchat {
-    return this._appelAchatService.categorieAppelAchat;
+    return this.appelAchatService.categorieAppelAchat;
   }
 
   set categorieAppelAchat(value: CategorieAppelAchat) {
-    this._appelAchatService.categorieAppelAchat = value;
+    this.appelAchatService.categorieAppelAchat = value;
   }
 
 }
