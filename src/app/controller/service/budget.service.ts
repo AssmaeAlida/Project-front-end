@@ -36,6 +36,10 @@ export class BudgetService {
     return this.http.post<Budget>(this.url , this.budget );
   }
 
+
+  public deleteByCode( annee:String):Observable<Number>{
+    return this.http.delete<Number>(this.url + 'annee/'+ annee);
+  }
   get budget(): Budget {
     if (this._budget == null){
       this._budget= new Budget();

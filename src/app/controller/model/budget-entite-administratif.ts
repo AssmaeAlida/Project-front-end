@@ -2,12 +2,14 @@ import {Budget} from "./budget";
 import {CategorieEntiteAdministratif} from "./categorie-entite-administratif.model";
 
 export class BudgetEntiteAdministratif {
-  private id: number ;
-  private ref: string;
+ public id: number ;
+ public ref: string;
 
-  private montantInvestissement : number;
-  private  montantFonctionnement : number;
-  private  montantTotal: number ;
-  private budget : Budget;
-  private categorieEntiteAdministratif : CategorieEntiteAdministratif;
+ public montantInvestissement : number;
+ public  montantFonctionnement : number;
+ public montantTotal: number ;
+ public  budget = new Budget();
+ public categorieEntiteAdministratif = new CategorieEntiteAdministratif();
+  public  pourcentage : number;
+
 }
