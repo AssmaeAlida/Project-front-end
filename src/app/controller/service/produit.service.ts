@@ -7,8 +7,8 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class ProduitService {
-private _produit= new Produit();
-private _produits=new Array<Produit>;
+private _produit: Produit;
+private _produits: Array<Produit>;
 private url='http://localhost:8036/api/v1/produit/'
   constructor(private _http:HttpClient) { }
 

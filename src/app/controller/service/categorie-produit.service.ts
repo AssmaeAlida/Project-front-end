@@ -9,7 +9,7 @@ import {Observable} from "rxjs";
 })
 export class CategorieProduitService {
 private _categorieProduit=new CategorieProduit();
-  private _categorieProduits=new Array<CategorieProduit>;
+  private _categorieProduits=new Array<CategorieProduit>();
   private _url='http://localhost:8036/api/v1/produit'
 
   get categorieProduit(): CategorieProduit {
@@ -40,6 +40,9 @@ private _categorieProduit=new CategorieProduit();
   }
   public findAll():Observable<Array<CategorieProduit>>{
     return this._http.get<Array<CategorieProduit>>(this.url);
+  }
+  public findByCode(code:string){
+    return this._http.get<CategorieProduit>(this.url+ 'code/'+ code);
   }
   public deleteByCode(code:string):Observable<number>{
     console.log('url==>'+this.url+'code/'+code);
