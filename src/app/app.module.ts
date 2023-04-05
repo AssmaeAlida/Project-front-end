@@ -45,7 +45,7 @@ import {
     ProduitListComponent,
     CategorieProduitCreateComponent,
     CategorieProduitListComponent,
-    CategorieEntiteAdministratifCreateComponent
+    CategorieEntiteAdministratifCreateComponent,
 
   ],
   imports: [

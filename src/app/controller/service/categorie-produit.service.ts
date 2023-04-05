@@ -8,11 +8,14 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class CategorieProduitService {
-private _categorieProduit=new CategorieProduit();
-  private _categorieProduits=new Array<CategorieProduit>();
+private _categorieProduit :CategorieProduit;
+  private _categorieProduits: Array<CategorieProduit>;
   private _url='http://localhost:8036/api/v1/produit'
 
   get categorieProduit(): CategorieProduit {
+    if(this._categorieProduit==null){
+      this._categorieProduit=new CategorieProduit();
+    }
     return this._categorieProduit;
   }
 
@@ -21,6 +24,9 @@ private _categorieProduit=new CategorieProduit();
   }
 
   get categorieProduits(): CategorieProduit[] {
+    if(this._categorieProduits==null){
+      this._categorieProduits=new Array<CategorieProduit>();
+    }
     return this._categorieProduits;
   }
 
