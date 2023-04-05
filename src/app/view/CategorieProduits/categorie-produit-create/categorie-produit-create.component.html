@@ -1,1 +1,27 @@
-<p>categorie-produit-create works!</p>
+<div class="row">
+
+  <div class="card my-3">
+    <div class="card-header text-secondary text-center title">les categories Produits
+    </div>
+    <div class="card-body">
+
+      <div class="form-group">
+        <label for="Code" class="text-warning">Code</label>
+        <input id="Code" type="text" class="form-control" [(ngModel)]="categorieProduit.code">
+      </div>
+
+      <div class="form-group">
+        <label for="libelle" class="text-warning">libelle</label>
+        <input id="libelle" type="text" class="form-control" [(ngModel)]="categorieProduit.libelle">
+      </div>
+
+
+    </div>
+    <div class="card-footer"></div>
+    <button class="btn btn-primary " (click)=save(categorieProduit)>ajouter</button>
+  </div>
+
+</div>
+
+
+
