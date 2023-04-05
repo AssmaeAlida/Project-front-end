@@ -23,8 +23,8 @@ export class ExpressionbesoinproduitService {
   }
 
   public deleteByCode(code: string): Observable<number>{
-    console.log('urlll ==>' +this.url +'code/{code}' + code);
-    return this._http.delete<number>(this.url + 'code/{code}' + this.expressionBesoinProduit.code);
+    console.log('urlll ==>' +this.url +'code/' + code);
+    return this._http.delete<number>(this.url + 'code/' + this.expressionBesoinProduit.code);
   }
 
   get expressionBesoinProduit(): ExpressionBesoinProduit {

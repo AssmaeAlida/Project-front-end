@@ -9,6 +9,6 @@ export class ExpressionBesoin {
   public total: number;
   public code: string;
   public dateExpressionBesoin: Date;
-  public expressionBesoinProduitList: List<ExpressionBesoinProduit>;
+  public expressionBesoinsProduits = new Array<ExpressionBesoinProduit>() ;
 
 }
