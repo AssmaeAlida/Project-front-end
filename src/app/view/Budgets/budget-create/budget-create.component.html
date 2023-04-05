@@ -1,23 +1,59 @@
-<div class="div card">
+
+<div class="card">
   <div class="card-header">Budget</div>
-  <div class="card-footer">budget {{budget|json}}
+
     <div class="card-body">
+      <table class="table table-hover table table-striped">
+        <thead>
 
-      <div class="form-group">
-        <label for="id">id</label>
-        <input id="id" type="text" class="form-control" [(ngModel)]="budget.id">
+      <table class="table table-striped ">
+      <thead>
+      <th>Id : </th>
+      <th>ref : </th>
+      <th> montantInvestissement: </th>
+      <th> montantFonctionnement: </th>
+      <th>pourcentage  : </th>
+      </thead>
+      </table>
+        <th>BudgetEntiteAdministratif</th>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6"><label>id</label>
+            <input type="text" class="form-control" [(ngModel)]="budgetEntiteAdministratif.id">
+          </div>
+          <div class="col-md-6"><label>ref</label>
+            <input type="text" class="form-control" [(ngModel)]="budgetEntiteAdministratif.ref">
+          </div>
+          <div class="col-md-6"><label>montantInvestissement</label>
+            <input type="text" class="form-control" [(ngModel)]="budgetEntiteAdministratif.montantInvestissement">
+          </div>
+          <div class="col-md-6"><label>montantFonctionnement</label>
+            <input type="text" class="form-control" [(ngModel)]="budgetEntiteAdministratif.montantFonctionnement">
+          </div>
+
+          <div class="col-md-6"><label>budget</label>
+            <input type="text" class="form-control" [(ngModel)]="budgetEntiteAdministratif.budget">
+          </div>
+          <div class="col-md-6"><label> pourcentage</label>
+            <input type="text" class="form-control" [(ngModel)]="budgetEntiteAdministratif. pourcentage">
+          </div>
+             </div>
       </div>
-      <div class="form-group">
-        <label for="annee">annee</label>
-        <input id="annee" type="text" class="form-control" [(ngModel)]="budget.annee">
+
+
+      <div class="card-footer" >
+        <button class="btn btn-outline-danger " (click)="budgetEntiteAdministratif">valide</button>
       </div>
-
-
-
     </div>
-    <div class="card-footer">
-      <button class="btn btn-success" (click)="save(budget)">Valider</button>
-    </div>
-  </div>
-</div>
+
+
+
+
+
+
+
+
+
+
+
 

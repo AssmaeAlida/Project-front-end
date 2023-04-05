@@ -3,6 +3,7 @@ import {Budget} from "../model/budget";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {ExpressionBesoin} from "../model/expression-besoin";
+import {BudgetEntiteAdministratif} from "../model/budget-entite-administratif";
 
 
 
@@ -14,6 +15,7 @@ import {ExpressionBesoin} from "../model/expression-besoin";
 export class BudgetService {
   private _budget= new Budget();
   private _budgets= new Array<Budget>();
+  private _budgetEntiteAdministratif = new BudgetEntiteAdministratif();
   private  url= 'http://localhost:8036/api/v1/budget/';
   constructor(private http: HttpClient) {  }
 
@@ -63,4 +65,17 @@ export class BudgetService {
   set budgets(value: Budget[]) {
     this._budgets = value;
   }
+
+  get budgetEntiteAdministratif(): BudgetEntiteAdministratif {
+    if (this._budgetEntiteAdministratif == null){
+      this._budgetEntiteAdministratif= new BudgetEntiteAdministratif();
+    }
+    return this._budgetEntiteAdministratif;
+  }
+
+  set budgetEntiteAdministratif(value: BudgetEntiteAdministratif) {
+    this._budgetEntiteAdministratif = value;
+  }
+
+
 }

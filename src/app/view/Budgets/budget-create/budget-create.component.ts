@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {BudgetService} from "src/app/controller/service/budget.service";
 import {Budget} from "src/app/controller/model/budget";
+import {BudgetEntiteAdministratif} from "../../../controller/model/budget-entite-administratif";
+
 
 @Component({
   selector: 'app-budget-create',
@@ -8,8 +10,11 @@ import {Budget} from "src/app/controller/model/budget";
   styleUrls: ['./budget-create.component.css']
 })
  export class BudgetCreateComponent  implements OnInit{
-  constructor(private  budgetService : BudgetService) {
-  }
+
+
+  constructor(private  budgetService : BudgetService
+  ) {}
+
   ngOnInit(): void {
   }
   public save(budget: Budget): void {
@@ -36,9 +41,20 @@ import {Budget} from "src/app/controller/model/budget";
     return this.budgetService.budgets;
   }
 
-  set budgets(value: Budget[]) {
+  set budgets (value: Budget[]) {
     this.budgetService.budgets = value;
   }
+
+  get budgetEntiteAdministratif(): BudgetEntiteAdministratif {
+
+    return this.budgetService.budgetEntiteAdministratif;
+  }
+
+  set budgetEntiteAdministratif(value: BudgetEntiteAdministratif) {
+    this.budgetService.budgetEntiteAdministratif = value;
+  }
+
+
 }
 
 

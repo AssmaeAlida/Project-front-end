@@ -35,4 +35,6 @@ export class BudgetListComponent implements OnInit{
   set budgets(value: Budget[]) {
     this.budgetService.budgets = value;
   }
+
+
 }

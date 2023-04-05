@@ -11,4 +11,6 @@ export class ExpressionBesoin {
   public dateExpressionBesoin: Date;
   public expressionBesoinsProduits = new Array<ExpressionBesoinProduit>() ;
 
+
+
 }

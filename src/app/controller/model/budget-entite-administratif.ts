@@ -12,4 +12,7 @@ export class BudgetEntiteAdministratif {
  public categorieEntiteAdministratif = new CategorieEntiteAdministratif();
   public  pourcentage : number;
 
+
+
+
 }
