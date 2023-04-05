@@ -23,6 +23,9 @@ import { ProduitListComponent } from './view/Produits/produit-list/produit-list.
 import {
   CategorieProduitCreateComponent
 } from "./view/CategorieProduits/categorie-produit-create/categorie-produit-create.component";
+import {
+  CategorieProduitListComponent
+} from "./view/CategorieProduits/categorie-produit-list/categorie-produit-list.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +40,8 @@ import {
     ExpressionBesoinProduitListComponent,
     ProduitCreateComponent,
     ProduitListComponent,
-    CategorieProduitCreateComponent
+    CategorieProduitCreateComponent,
+    CategorieProduitListComponent
 
   ],
   imports: [
