@@ -1,7 +1,7 @@
 import {ExpressionBesoin} from "./expression-besoin";
 import {Produit} from "./produit.model";
 
-export class ExpressionBesoinProduit {
+export class ExpressionBesoinProduit  {
   public id: number;
   public code: string;
   public produit: Produit;

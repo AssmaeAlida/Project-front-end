@@ -28,7 +28,7 @@ import {
 } from "./view/CategorieProduits/categorie-produit-list/categorie-produit-list.component";
 import {CategorieEntiteAdministratifCreateComponent} from "./view/CategorieEntiteAdministratif/categorie-entite-administratif-create/categorie-entite-administratif-create.component";
 import {CategorieEntiteAdministratifListComponent} from "./view/CategorieEntiteAdministratif/categorie-entite-administratif-list/categorie-entite-administratif-list.component";
-import { PageNotFoundedComponent } from './view/page-not-founded/page-not-founded.component';
+
 import {AppelAchatCreateComponent} from "./view/AppelAchat/appel-achat-create/appel-achat-create.component";
 
 @NgModule({
@@ -49,7 +49,6 @@ import {AppelAchatCreateComponent} from "./view/AppelAchat/appel-achat-create/ap
     CategorieProduitListComponent,
     CategorieEntiteAdministratifCreateComponent,
     CategorieEntiteAdministratifListComponent,
-    PageNotFoundedComponent,
     AppelAchatCreateComponent,
 
   ],
