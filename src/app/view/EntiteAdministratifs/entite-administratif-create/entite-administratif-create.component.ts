@@ -34,7 +34,16 @@ export class EntiteAdministratifCreateComponent implements OnInit {
       }
     )
   }
+  public deleteByCodee(entiteAdministratif: EntiteAdministratif , index: number):void{
 
+    this.entiteAdministratifService.deleteByCode(entiteAdministratif.code).subscribe(data => {
+      if (data > 0){
+        this.entiteAdministratifs.splice(index, 1);
+      }else{
+        alert('DEL ERROR');
+      }
+    });
+  }
 
   get entiteAdministratif(): EntiteAdministratif {
 

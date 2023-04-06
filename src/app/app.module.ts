@@ -26,9 +26,11 @@ import {
 import {
   CategorieProduitListComponent
 } from "./view/CategorieProduits/categorie-produit-list/categorie-produit-list.component";
-import {
-  CategorieEntiteAdministratifCreateComponent
-} from "./view/CategorieEntiteAdministratif/categorie-entite-administratif-create/categorie-entite-administratif-create.component";
+import {CategorieEntiteAdministratifCreateComponent} from "./view/CategorieEntiteAdministratif/categorie-entite-administratif-create/categorie-entite-administratif-create.component";
+import {CategorieEntiteAdministratifListComponent} from "./view/CategorieEntiteAdministratif/categorie-entite-administratif-list/categorie-entite-administratif-list.component";
+import { PageNotFoundedComponent } from './view/page-not-founded/page-not-founded.component';
+import {AppelAchatCreateComponent} from "./view/AppelAchat/appel-achat-create/appel-achat-create.component";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +48,9 @@ import {
     CategorieProduitCreateComponent,
     CategorieProduitListComponent,
     CategorieEntiteAdministratifCreateComponent,
+    CategorieEntiteAdministratifListComponent,
+    PageNotFoundedComponent,
+    AppelAchatCreateComponent,
 
   ],
   imports: [
@@ -54,6 +59,9 @@ import {
     HttpClientModule
   ],
   providers: [],
+  exports: [
+    AppelAchatCreateComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
