@@ -11,6 +11,7 @@ import {CategorieEntiteAdministratif} from "../../../controller/model/categorie-
 })
 export class EntiteAdministratifCreateComponent implements OnInit {
   ngOnInit(): void {
+    this.findAll()
   }
 
   constructor(private entiteAdministratifService: EntiteAdministratifService) {
@@ -18,6 +19,9 @@ export class EntiteAdministratifCreateComponent implements OnInit {
 
   public findByCode(code: String): void {
     this.entiteAdministratifService.findByCode(code).subscribe(data => this.entiteAdministratif = data)
+  }
+  public findAll():void{
+    this.entiteAdministratifService.findAll().subscribe(data=>this.entiteAdministratifs=data)
   }
 
   public deleteByCode(entiteAdministratif: EntiteAdministratif): void {
@@ -30,6 +34,7 @@ export class EntiteAdministratifCreateComponent implements OnInit {
           alert('bien fait');
         } else {
           alert('echouer')
+          console.log(data);
         }
       }
     )
