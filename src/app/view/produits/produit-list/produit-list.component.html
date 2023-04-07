@@ -4,6 +4,8 @@
   <th>Id</th>
   <th>Code</th>
   <th>Libelle</th>
+  <th>Supprimer</th>
+  <th>Modifier</th>
 
   </thead>
   <tbody>
@@ -11,7 +13,8 @@
     <td>{{p.id}}</td>
     <td>{{p.code}}</td>
     <td>{{p.libelle}}</td>
-    <td><span (click)="deleteByCode(p,i)" class="fa fa-trash btn btn-sm"></span> </td>
+    <td><span (click)="delete(i)" class="fa fa-trash btn btn-danger"></span> </td>
+    <td><span (click)="update(i,p)" class="fa fa-edit btn btn-warning"></span> </td>
   </tr>
   </tbody>
 </table>

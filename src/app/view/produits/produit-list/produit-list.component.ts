@@ -11,21 +11,17 @@ export class ProduitListComponent implements OnInit{
 constructor(private produitService:ProduitService) {
 }
   ngOnInit():void {
-    this.produitService.init();
+    this.produitService.findAll();
   }
-  public findAll():void{
-    this.produitService.findAll().subscribe(data => this.produits = data)
-  }
-  public deleteByCode(produit: Produit , index: number):void{
-    console.log('haa code' + produit.code);
-    this.produitService.deleteByCode(produit.code).subscribe(data => {
-      if (data > 0){
+  public delete( index: number):void{
         this.produits.splice(index, 1);
-      }else{
-        alert('DEL ERROR');
-      }
-    });
+
   }
+  public update( index: number,produit:Produit){
+   this.produitService.update(index,produit);
+
+  }
+
   get produit(): Produit {
     return this.produitService.produit;
   }
