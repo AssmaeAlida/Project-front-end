@@ -20,6 +20,8 @@ export class ExpressionBesoinCreateComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    this.findAll();
+
   }
 
   public deleteByCode(expressionBesoin: ExpressionBesoin , index: number):void{
@@ -39,8 +41,12 @@ export class ExpressionBesoinCreateComponent implements OnInit{
         this.expressionBesoinProduits.splice(index, 1);
       }else{
         alert('DEL ERROR');
+        console.log(data);
       }
     });
+  }
+  public findAll():void{
+    this.expressionBesoinService.findAll().subscribe(data=>this.expressionBesoins=data)
   }
 
   public save(expressionBesoin: ExpressionBesoin): void {
@@ -80,6 +86,9 @@ export class ExpressionBesoinCreateComponent implements OnInit{
   }
 
   set expressionBesoinProduits(value: Array<ExpressionBesoin>) {
+    this.expressionBesoinService.expressionBesoins = value;
+  }
+  set expressionBesoins(value: ExpressionBesoin[]) {
     this.expressionBesoinService.expressionBesoins = value;
   }
 

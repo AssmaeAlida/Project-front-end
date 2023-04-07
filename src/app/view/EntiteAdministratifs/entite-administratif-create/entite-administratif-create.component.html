@@ -24,17 +24,38 @@
               Administratif
             </div>
             <div class="card-body">
-              <div class="row ">
-                <div class="col-6 ">
+             <div class="row ">
+               <div class="col-md-12">
+                 <div class="form-group"><label for="categorieEntiteAdministratif" class="text"> categorie </label>
+                   <select class="form-select put" aria-label="Default select example" id="categorieEntiteAdministratif"  [(ngModel)]="categorieEntiteAdministratif.code">
+
+                     <option value="hospital">hospital</option>
+                     <option value="educatif">educatif</option>
+                     <option value="laboratoire">laboratoire</option>
+                     <option value="faculté">faculté</option>
+                     <option value="bibliotheque">bibliotheque</option>
+                     <option value="école">école</option>
+                     <option value="arrondissement">arrondissement</option>
+                   </select>
+
+                 </div></div>
+                <!--<div class="col-md-6">
                   <div class="form-group">
+                    <label for="categorieEntiteAdministratif" class="text">Categorie </label>
+                    <select  class="form-select" aria-label="Default select example"  id="categorieEntiteAdministratif"  class="put" [(ngModel)]="categorieEntiteAdministratif.code">
+                      <option value="hospital">hospital</option>
+                      <option value="educatif">educatif</option>
+                    </select>
+                  </div>
+                <--  <div class="form-group">
                     <label for="ccode" class="text">Code</label>
                     <input id="ccode" type="text" class="form-control put" [(ngModel)]="categorieEntiteAdministratif.code">
-                  </div></div>
-                <div class="col-6 ">
+                  </div>-></div>
+                <div class="col-md-6 ">
                   <div class="form-group">
                     <label for="liibelle" class="text">libelle</label>
                     <input id="liibelle" type="text" class="form-control put" [(ngModel)]="categorieEntiteAdministratif.libelle">
-                  </div></div>
+                  </div></div>-->
 
               </div></div>
 

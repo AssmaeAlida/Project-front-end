@@ -21,13 +21,13 @@ export class ExpressionBesoinService {
 
   public save(expressionBesoin: ExpressionBesoin): Observable<ExpressionBesoin>{
     this._expressionBesoin = expressionBesoin;
-    this.expressionBesoins.push(this._expressionBesoin);
+    this.expressionBesoins.push({...this._expressionBesoin});
     return this._http.post<ExpressionBesoin>(this.url, this._expressionBesoin);
    }
 
    public deleteByCode(code: string): Observable<number>{
     console.log('urll==>' +this.url +'code/' + code);
-     return this._http.delete<number>(this.url + 'code/' + this._expressionBesoin.code);
+     return this._http.delete<number>(this.url + 'code/' + code);
    }
   public deleteByCodee(code: string): Observable<number>{
     console.log('urlll ==>' +this.url +'code/' + code);
