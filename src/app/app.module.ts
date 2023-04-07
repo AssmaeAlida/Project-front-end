@@ -19,6 +19,11 @@ import { BudgetListComponent } from './view/Budgets/budget-list/budget-list.comp
 import { BudgetViewComponent } from './view/Budgets/budget-view/budget-view.component';
 import { BudgetEditComponent } from './view/Budgets/budget-edit/budget-edit.component';
 
+import { BudgetEntiteAdministratifeCreateComponent } from './view/BudgetEntiteAdministratifes/budget-entite-administratife-create/budget-entite-administratife-create.component';
+import { BudgetEntiteAdministratifeListComponent } from './view/BudgetEntiteAdministratifes/budget-entite-administratife-list/budget-entite-administratife-list.component';
+import { BudgetEntiteAdministratifeViewComponent } from './view/BudgetEntiteAdministratifes/budget-entite-administratife-view/budget-entite-administratife-view.component';
+import { BudgetEntiteAdministratifeEditComponent } from './view/BudgetEntiteAdministratifes/budget-entite-administratife-edit/budget-entite-administratife-edit.component';
+
 
 
 import {
@@ -51,6 +56,11 @@ import { CategorieEntiteAdministratifListComponent } from './view/CategorieEntit
     BudgetListComponent,
     BudgetViewComponent,
     BudgetEditComponent,
+    BudgetEntiteAdministratifeCreateComponent,
+    BudgetEntiteAdministratifeListComponent,
+    BudgetEntiteAdministratifeViewComponent,
+    BudgetEntiteAdministratifeEditComponent,
+
   ],
   imports: [
     BrowserModule,
