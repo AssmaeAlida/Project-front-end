@@ -15,16 +15,19 @@ export class AppelAchatService {
   private _categorieAppelAchat= new CategorieAppelAchat();
   private _appelAchatProduit= new AppelAchatProduit();
 
-  public save(appelAchat: AppelAchat): Observable<number> {
-    return this.http.post<number>(this.url,appelAchat)
+
+  public save(appelAchat: AppelAchat): Observable<AppelAchat> {
+    this._appelAchat = appelAchat;
+    this._listAppelAchat.push({...this._appelAchat});
+    return this._http.post<AppelAchat>(this.url,this._appelAchat)
   }
   public findByRef(ref: String): Observable<AppelAchat> {
-    return this.http.get<AppelAchat>(this.url+'ref/'+ref)
+    return this._http.get<AppelAchat>(this.url+'ref/'+ref)
   }
   public deleteByRef(ref: String): Observable<number> {
-    return this.http.delete<number>(this.url+'ref/'+ref)
+    return this._http.delete<number>(this.url+'ref/'+ref)
   }
-  constructor(private http:HttpClient) { }
+  constructor(private _http:HttpClient) { }
   public addAppelAchatProduit(){
     this.appelAchat.appelAchatProduits.push(this.cloneAppelAchatProduit(this.appelAchatProduit));
   }
@@ -35,6 +38,9 @@ export class AppelAchatService {
     myClone.quantiteLivraison = appelAchatProduit.quantiteLivraison;
     myClone.quantiteReception = appelAchatProduit.quantiteReception;
     return myClone;
+  }
+  public findAll(): Observable<Array<AppelAchat>>{
+    return this._http.get<Array<AppelAchat>>(this.url);
   }
   get appelAchat(): AppelAchat {
     return this._appelAchat;

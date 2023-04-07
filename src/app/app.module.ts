@@ -37,6 +37,7 @@ import { ProduitListComponent } from './view/Produits/produit-list/produit-list.
 import { CategorieEntiteAdministratifCreateComponent } from './view/CategorieEntiteAdministratif/categorie-entite-administratif-create/categorie-entite-administratif-create.component';
 import { CategorieEntiteAdministratifListComponent } from './view/CategorieEntiteAdministratif/categorie-entite-administratif-list/categorie-entite-administratif-list.component';
 import {AppelAchatCreateComponent} from "./view/AppelAchat/appel-achat-create/appel-achat-create.component";
+import {AppelAchatListComponent} from "./view/AppelAchat/appel-achat-list/appel-achat-list.component";
 @NgModule({
     declarations: [
         AppComponent,
@@ -62,6 +63,7 @@ import {AppelAchatCreateComponent} from "./view/AppelAchat/appel-achat-create/ap
         BudgetEntiteAdministratifeViewComponent,
         BudgetEntiteAdministratifeEditComponent,
         AppelAchatCreateComponent,
+        AppelAchatListComponent
 
     ],
   imports: [
