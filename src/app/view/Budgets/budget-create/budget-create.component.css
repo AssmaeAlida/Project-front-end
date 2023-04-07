@@ -2,7 +2,7 @@
   font-weight: bolder;
   font-family:cursive;
   font-size: 27px;
-  background-color:burlywood;
+  background-color:lightskyblue;
 
 }
 .text{
@@ -10,14 +10,14 @@
   font-weight: bold;
   font-family: Candara;
   font-size: 23px;
-  background-color:burlywood;
+  background-color:lightskyblue;
 }
 .card{
-  background-color: bisque;
+  background-color: lightskyblue;
 }
 
 .btn{
-  background-color: brown;
+  background-color: blue;
   color: black;
 
 }
