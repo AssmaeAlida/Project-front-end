@@ -39,7 +39,7 @@ export class BudgetService {
   }
 
 
-  public deleteByCode( annee:String):Observable<Number>{
+  public deleteByAnnee( annee:number):Observable<Number>{
     return this.http.delete<Number>(this.url + 'annee/'+ annee);
   }
   get budget(): Budget {

@@ -1,0 +1,23 @@
+.title{
+  font-weight: bolder;
+  font-family:cursive;
+  font-size: 27px;
+  background-color:burlywood;
+
+}
+.text{
+  color:black;
+  font-weight: bold;
+  font-family: Candara;
+  font-size: 23px;
+  background-color:burlywood;
+}
+.card{
+  background-color: bisque;
+}
+
+.btn{
+  background-color: brown;
+  color: black;
+
+}

@@ -12,7 +12,7 @@ export class BudgetEntiteAdministratifeService {
   private url= "http://localhost:8036/api/v1/BudgetEntiteAdministratif/"
   constructor(private http: HttpClient) {  }
 
-  public findById(ref: number):Observable<BudgetEntiteAdministratif>{
+  public findByRef(ref: string):Observable<BudgetEntiteAdministratif>{
     return this.http.get<BudgetEntiteAdministratif>(this.url + "ref/" + ref );
 
   }
@@ -22,7 +22,9 @@ export class BudgetEntiteAdministratifeService {
 
   }
 
-
+  public deleteByRef( ref: string):Observable<Number>{
+    return this.http.delete<Number>(this.url + 'ref/'+ ref);
+  }
 
   public save(budgetEntiteAdministratif: BudgetEntiteAdministratif ):Observable<BudgetEntiteAdministratif>{
     this._budgetEntiteAdministratif = budgetEntiteAdministratif;

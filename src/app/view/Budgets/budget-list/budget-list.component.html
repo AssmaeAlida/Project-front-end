@@ -1,0 +1,21 @@
+<table class="table">
+  <thead>
+  <th>annee</th>
+  <th>QmontantTotal</th>
+  <th>montantInvestissement</th>
+  <th>montantFonctionnement</th>
+
+  <th>Actions</th>
+
+  </thead>
+  <tbody>
+  <tr *ngFor = "let b of budgets; index as i">
+    <td>{{b.annee}}</td>
+    <td>{{b.montantTotal}}</td>
+    <td>{{b.montantInvestissement}}</td>
+    <td>{{b.montantFonctionnement}}</td>
+
+
+  </tr>
+  </tbody>
+</table>

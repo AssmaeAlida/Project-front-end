@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {BudgetService} from "src/app/controller/service/budget.service";
 import {Budget} from "src/app/controller/model/budget";
 import {BudgetEntiteAdministratif} from "../../../controller/model/budget-entite-administratif";
+import {EntiteAdministratif} from "../../../controller/model/entite-administratif.model";
 
 
 @Component({
@@ -16,6 +17,17 @@ import {BudgetEntiteAdministratif} from "../../../controller/model/budget-entite
   ) {}
 
   ngOnInit(): void {
+  }
+
+  public findByAnnee(annee: number): void {
+    this.budgetService.findByAnnee(annee).subscribe(data => this.budget = data)
+  }
+  public findAll():void{
+    this.budgetService.findByAll().subscribe(data=>this.budgets=data)
+  }
+
+  public deleteByAnnee(budget: Budget): void {
+    this.budgetService.deleteByAnnee(budget.annee).subscribe(data => console.log(data))
   }
   public save(budget: Budget): void {
     this.budgetService.save(budget).subscribe(data => {
