@@ -1,50 +1,57 @@
 
-<div class="card">
-  <div class="card-header">Budget</div>
-
+<div class="card-body " class="list-unstyled " >
+  <div class="card">
+    <div class="card-header  text-center title ">Budget</div>
     <div class="card-body">
-      <table class="table table-hover table table-striped">
-        <thead>
+      <div class="row">
+  <div class="col-md-6"><label>annee</label>
 
-      <table class="table table-striped ">
-      <thead>
-      <th>Id : </th>
-      <th>ref : </th>
-      <th> montantInvestissement: </th>
-      <th> montantFonctionnement: </th>
-      <th>pourcentage  : </th>
-      </thead>
-      </table>
-        <th>BudgetEntiteAdministratif</th>
+    <input type="text"  class="form-control put" [(ngModel)]="budget.annee">
+  </div>
+  <div class="col-md-6"><label>montantTotal</label>
+    <input type="text" class="form-control" [(ngModel)]="budget.montantTotal">
+  </div>
+
+
+  <div class="col-md-6"><label>montantInvestissement</label>
+    <input type="text" class="form-control" [(ngModel)]="budget.montantInvestissement">
+  </div>
+  <div class="col-md-6"><label>montantFonctionnement</label>
+    <input type="text" class="form-control" [(ngModel)]="budget.montantFonctionnement">
+  </div>
+
+      <div class="card-header  text-center title">BudgetEntiteAdministratif</div>
       <div class="card-body">
         <div class="row">
-          <div class="col-md-6"><label>id</label>
-            <input type="text" class="form-control" [(ngModel)]="budgetEntiteAdministratif.id">
-          </div>
+
           <div class="col-md-6"><label>ref</label>
             <input type="text" class="form-control" [(ngModel)]="budgetEntiteAdministratif.ref">
           </div>
+          <div class="col-md-6"><label> pourcentage</label>
+            <input type="text" class="form-control" [(ngModel)]="budgetEntiteAdministratif. pourcentage">
+          </div>
+
+
           <div class="col-md-6"><label>montantInvestissement</label>
             <input type="text" class="form-control" [(ngModel)]="budgetEntiteAdministratif.montantInvestissement">
           </div>
           <div class="col-md-6"><label>montantFonctionnement</label>
             <input type="text" class="form-control" [(ngModel)]="budgetEntiteAdministratif.montantFonctionnement">
           </div>
+          <div class="col-md-6"><label>montantTotal</label>
+            <input type="text" class="form-control" [(ngModel)]="budgetEntiteAdministratif.montantTotal">
+          </div>
 
-          <div class="col-md-6"><label>budget</label>
-            <input type="text" class="form-control" [(ngModel)]="budgetEntiteAdministratif.budget">
-          </div>
-          <div class="col-md-6"><label> pourcentage</label>
-            <input type="text" class="form-control" [(ngModel)]="budgetEntiteAdministratif. pourcentage">
-          </div>
-             </div>
+
+        </div>
       </div>
 
 
       <div class="card-footer" >
-        <button class="btn btn-outline-danger " (click)="budgetEntiteAdministratif">valide</button>
+        <button class="btn btn-outline-danger " (click)="budget">valide</button>
       </div>
-        </thead>
-      </table>
+
+  </div>
+      </div>
     </div>
 </div>
