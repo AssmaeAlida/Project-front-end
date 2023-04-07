@@ -13,13 +13,7 @@ constructor(private produitService:ProduitService) {
 ngOnInit():void {
 }
   public save(produit: Produit): void {
-    this.produitService.save(produit).subscribe(data => {
-      if (data != null) {
-        alert('SAVE SUCCESS');
-      } else {
-        alert('SAVE ERROR :: EXIST');
-      }
-    });
+    this.produitService.save() ;
   }
   get produit(): Produit{
 
