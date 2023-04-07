@@ -19,10 +19,7 @@ export class BudgetService {
   private  url= 'http://localhost:8036/api/v1/budget/';
   constructor(private http: HttpClient) {  }
 
-  public findById(id: number):Observable<Budget>{
-    return this.http.get<Budget>(this.url + "id/" + id );
 
-  }
   public findByAnnee(annee: number):Observable<Budget>{
     return this.http.get<Budget>(this.url + "annee/" + annee );
 
