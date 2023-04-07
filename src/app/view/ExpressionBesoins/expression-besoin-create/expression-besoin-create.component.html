@@ -61,11 +61,11 @@
 
                   </thead>
                   <tbody>
-                  <tr *ngFor = "let ex of expressionBesoin.expressionBesoinsProduits; index as i">
+                  <tr *ngFor = "let ex of expressionBesoin.expressionBesoinsProduitList; index as i">
                     <td>{{ex.code}}</td>
                     <td>{{ex.quantite}}</td>
                     <td>{{ex.produit.code}}</td>
-                    <td><span (click)="deleteByCodee(ex,i)" class="fa fa-trash btn btn-sm"></span> </td>
+                    <!--<td><span (click)="deleteByCodee(ex,i)" class="fa fa-trash btn btn-sm"></span> </td>-->
                   </tr>
                   </tbody>
                 </table>

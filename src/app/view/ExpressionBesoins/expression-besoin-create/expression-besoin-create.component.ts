@@ -34,7 +34,7 @@ export class ExpressionBesoinCreateComponent implements OnInit{
       }
     });
   }
-  public deleteByCodee(expressionBesoinProduit: ExpressionBesoinProduit , index: number):void{
+ /* public deleteByCodee(expressionBesoinProduit: ExpressionBesoinProduit , index: number):void{
     console.log('haa code' + expressionBesoinProduit.code);
     this.expressionBesoinProduitService.deleteByCode(expressionBesoinProduit.code).subscribe(data => {
       if (null != data){
@@ -44,12 +44,13 @@ export class ExpressionBesoinCreateComponent implements OnInit{
         console.log(data);
       }
     });
-  }
+  }*/
   public findAll():void{
     this.expressionBesoinService.findAll().subscribe(data=>this.expressionBesoins=data)
   }
 
   public save(expressionBesoin: ExpressionBesoin): void {
+    console.log(expressionBesoin);
     this.expressionBesoinService.save(expressionBesoin).subscribe(data => {
       if (data != null) {
         alert('SAVE SUCCESS');
@@ -57,7 +58,7 @@ export class ExpressionBesoinCreateComponent implements OnInit{
         alert('SAVE ERROR :: EXIST');
       }
     });
-    for (const item of expressionBesoin.expressionBesoinsProduits) {
+    for (const item of expressionBesoin.expressionBesoinsProduitList) {
       this.expressionBesoinProduitService.save(item);
     }
   }
@@ -85,8 +86,8 @@ export class ExpressionBesoinCreateComponent implements OnInit{
     return this.expressionBesoinService.expressionBesoins;
   }
 
-  set expressionBesoinProduits(value: Array<ExpressionBesoin>) {
-    this.expressionBesoinService.expressionBesoins = value;
+  set expressionBesoinProduit(value: ExpressionBesoinProduit) {
+    this.expressionBesoinService.expressionBesoinProduit = value;
   }
   set expressionBesoins(value: ExpressionBesoin[]) {
     this.expressionBesoinService.expressionBesoins = value;

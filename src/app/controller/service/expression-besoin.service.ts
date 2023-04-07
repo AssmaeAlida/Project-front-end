@@ -16,7 +16,7 @@ export class ExpressionBesoinService {
    private url =  'http://localhost:8036/api/v1/expressionbesoin/';
 
    public addExpressionBesoinProduit(){
-     this.expressionBesoin.expressionBesoinsProduits.push({...this.expressionBesoinProduit});
+     this.expressionBesoin.expressionBesoinsProduitList.push({...this.expressionBesoinProduit});
    }
 
   public save(expressionBesoin: ExpressionBesoin): Observable<ExpressionBesoin>{
