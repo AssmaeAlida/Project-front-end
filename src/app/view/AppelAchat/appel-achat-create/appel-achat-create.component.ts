@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {AppelAchatService} from "src/app/controller/service/appel-achat.service";
-import {AppelAchat} from "../../../controller/model/appel-achat.model";
-import {CategorieAppelAchat} from "../../../controller/model/categorie-appel-achat.model";
-import {AppelAchatProduitService} from "../../../controller/service/appel-achat-produit.service";
+import {AppelAchat} from "src/app/controller/model/appel-achat.model";
+import {CategorieAppelAchat} from "src/app/controller/model/categorie-appel-achat.model";
+import {AppelAchatProduitService} from "src/app/controller/service/appel-achat-produit.service";
+import {AppelAchatProduit} from "../../../controller/model/appel-achat-produit.model";
 
 @Component({
   selector: 'app-appel-achat-create',
@@ -37,7 +38,7 @@ export class AppelAchatCreateComponent implements OnInit {
   }
   public deleteByRef(appelAchat: AppelAchat , index: number):void{
     this.appelAchatService.deleteByRef(appelAchat.ref).subscribe(data =>{
-      if(data  > 0) this.listAppelAchat.splice(index, 1);
+      if(data  > 0) this.appelAchatProduits.splice(index, 1);
       else alert('error');
     });
   }
@@ -48,7 +49,17 @@ export class AppelAchatCreateComponent implements OnInit {
   set appelAchat(value: AppelAchat) {
     this.appelAchatService.appelAchat = value;
   }
+  get appelAchatProduit(): AppelAchatProduit {
+    return this.appelAchatService.appelAchatProduit;
+  }
 
+  set appelAchatProduit(value: AppelAchatProduit) {
+    this.appelAchatService.appelAchatProduit = value;
+  }
+
+  set appelAchatProduits(value: Array<AppelAchat>) {
+    this.appelAchatService.listAppelAchat = value;
+  }
   get categorieAppelAchat(): CategorieAppelAchat {
     return this.appelAchatService.categorieAppelAchat;
   }
@@ -61,6 +72,6 @@ export class AppelAchatCreateComponent implements OnInit {
   }
 
   set listAppelAchat(value: AppelAchat[]) {
-    this.listAppelAchat = value;
+    this.appelAchatService.listAppelAchat = value;
   }
 }

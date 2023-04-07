@@ -10,7 +10,7 @@ import {AppelAchatProduit} from "../model/appel-achat-produit.model";
 })
 export class AppelAchatService {
   private _appelAchat= new AppelAchat();
-  private _listAppelAchat= new Array<AppelAchat>;
+  private _listAppelAchat= new Array<AppelAchat>();
   private url= 'http://localhost:8036/api/v1/appel-achat/';
   private _categorieAppelAchat= new CategorieAppelAchat();
   private _appelAchatProduit= new AppelAchatProduit();
@@ -25,11 +25,11 @@ export class AppelAchatService {
     return this._http.get<AppelAchat>(this.url+'ref/'+ref)
   }
   public deleteByRef(ref: String): Observable<number> {
-    return this._http.delete<number>(this.url+'ref/'+ref)
+    return this._http.delete<number>(this.url+'ref/'+ref+this.appelAchatProduit.ref)
   }
   constructor(private _http:HttpClient) { }
   public addAppelAchatProduit(){
-    this.appelAchat.appelAchatProduits.push(this.cloneAppelAchatProduit(this.appelAchatProduit));
+    this.appelAchat.appelAchatProduits.push({...this.appelAchatProduit});
   }
   private cloneAppelAchatProduit(appelAchatProduit: AppelAchatProduit){
     const myClone = new AppelAchatProduit();
@@ -43,6 +43,8 @@ export class AppelAchatService {
     return this._http.get<Array<AppelAchat>>(this.url);
   }
   get appelAchat(): AppelAchat {
+    if (this._appelAchat == null)
+      this._appelAchat = new AppelAchat();
     return this._appelAchat;
   }
 
@@ -50,6 +52,8 @@ export class AppelAchatService {
     this._appelAchat = value;
   }
   get appelAchatProduit(): AppelAchatProduit {
+    if (this._appelAchatProduit == null)
+      this._appelAchatProduit = new AppelAchatProduit();
     return this._appelAchatProduit;
   }
 
@@ -58,6 +62,8 @@ export class AppelAchatService {
   }
 
   get listAppelAchat(): AppelAchat[] {
+    if (this._listAppelAchat == null)
+      this._listAppelAchat = new Array<AppelAchat>();
     return this._listAppelAchat;
   }
 

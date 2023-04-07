@@ -63,7 +63,8 @@ import {AppelAchatListComponent} from "./view/AppelAchat/appel-achat-list/appel-
         BudgetEntiteAdministratifeViewComponent,
         BudgetEntiteAdministratifeEditComponent,
         AppelAchatCreateComponent,
-        AppelAchatListComponent
+        AppelAchatListComponent,
+
 
     ],
   imports: [
