@@ -1,1 +1,18 @@
-<p>appel-achat-list works!</p>
+<table class="table table">
+  <thead>
+  <th>Ref</th>
+  <th>Date Appel Achat</th>
+  <th>Categorie Appel Achat</th>
+  <th>Total</th>
+
+  </thead>
+  <tbody>
+  <tr *ngFor = "let e of listAppelAchat; index as i">
+    <td>{{e.ref}}</td>
+    <td>{{e.dateAppelAchat}}</td>
+    <td>{{e.categorieAppelAchat}}</td>
+    <td>{{e.totale}}</td>
+    <td><span (click)="deleteByRef(e,i)" class="fa fa-trash btn btn-sm"></span> </td>
+  </tr>
+  </tbody>
+</table>

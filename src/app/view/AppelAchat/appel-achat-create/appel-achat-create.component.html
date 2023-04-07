@@ -1,43 +1,47 @@
-
-    <div class="card">
+<div class="container">
+  <div class="row ">
+    <div class="col-md_6">
+    <div class="card align-content-center cardd">
       <div class="card-header text-dark text-center titre">L'Appel Achat
       </div>
       <div class="card-body p-4">
-        <div class="card p-4">
-          <div class="card-header text-bg-warning text-center ">Appel achat produit
+
+        <div class="card p-4 produit">
+          <div class="card-header  text-center "> <b> <u>Appel achat produit</u> </b>
           </div>
           <div class="card-body">
 
             <div class="form-group">
               <label for="produit" class="text-dark">Produit</label>
               <input id="produit" type="text" class="form-control"
-                     [(ngModel)]="appelAchat.appelAchatProduit.produit">
+                     [(ngModel)]="appelAchatProduit.produit">
             </div>
             <div class="form-group">
               <label for="quantite" class="text-dark">Quantite</label>
-              <input id="quantite" type="text" class="form-control" [(ngModel)]="appelAchat.appelAchatProduit.quantite">
+              <input id="quantite" type="text" class="form-control" [(ngModel)]="appelAchatProduit.quantite">
             </div>
 
             <div class="form-group">
               <label for="quantiteLivraison" class="text-dark">Quantite Livraison</label>
               <input id="quantiteLivraison" type="text" class="form-control"
-                     [(ngModel)]="appelAchat.appelAchatProduit.quantiteLivraison">
+                     [(ngModel)]="appelAchatProduit.quantiteLivraison">
             </div>
 
             <div class="form-group">
               <label for="quantiteReception" class="text-dark">Quantite Reception</label>
               <input id="quantiteReception" type="text" class="form-control"
-                     [(ngModel)]="appelAchat.appelAchatProduit.quantiteReception">
+                     [(ngModel)]="appelAchatProduit.quantiteReception">
             </div>
 
           </div>
           <div class="card-footer ">
-          <button class="btn btn-primary " (click)="addAppelAchatProduit()">ajouter</button></div>
+          <button class="btn btn-outline-primary " (click)="addAppelAchatProduit()">ajouter</button></div>
         </div>
-        <div class="card my-2 text-center col-8">
-          <div class="card-header">liste des Produits</div>
-          <div class="card-body ">
-        <table class="table table-hover table-striped">
+        <div class="row justify-content-center">
+        <div class="card my-2 text-center col-8 ">
+          <div class="card-header"> <b><u> liste des Produits</u></b></div>
+          <div class="card-body table">
+        <table class="table table-hover table-striped ">
           <thead>
           <th>Produit</th>
           <th>Quantite</th>
@@ -57,7 +61,7 @@
           </tbody>
         </table>
           </div>
-        </div>
+        </div></div>
         <div class="form-group">
           <label for="ref" class="text-danger">Ref</label>
           <input id="ref" type="text" class="form-control" [(ngModel)]="appelAchat.ref">
@@ -65,13 +69,13 @@
 
         <div class="form-group">
           <label for="dateAppelAchat" class="text-danger">Date Appel Achat</label>
-          <input id="dateAppelAchat" type="text" class="form-control" [(ngModel)]="appelAchat.dateAppelAchat">
+          <input id="dateAppelAchat" type="date" class="form-control" [(ngModel)]="appelAchat.dateAppelAchat">
         </div>
 
         <div class="form-group">
           <label for="categorieAppelAchat" class="text-danger">Categorie </label>
 
-          <select id="categorieAppelAchat" [(ngModel)]="appelAchat.categorieAppelAchat">
+          <select class="form-select" id="categorieAppelAchat" [(ngModel)]="appelAchat.categorieAppelAchat">
             <option value="bonDeCommande">Bon de commande</option>
             <option value="marche">Marche</option>
           </select>
@@ -86,9 +90,29 @@
       <div class="card-footer text-center">
       <button class="btn btn-success bouton" (click)=save(appelAchat)>confirmer</button></div>
     </div>
+    </div>
+<div class="col-md-6 justify-content-center">
+  <table class="table table-hover my-3" *ngIf="listAppelAchat.length!=0">
+    <thead>
+    <th>Ref</th>
+    <th>Date Appel Achat</th>
+    <th>Categorie Appel Achat</th>
+    <th>Total</th>
 
-
-
+    </thead>
+    <tbody>
+    <tr *ngFor = "let e of listAppelAchat; index as i">
+      <td>{{e.ref}}</td>
+      <td>{{e.dateAppelAchat}}</td>
+      <td>{{e.categorieAppelAchat}}</td>
+      <td>{{e.totale}}</td>
+      <td><span (click)="deleteByRef(e,i)" class="fa fa-trash btn btn-sm"></span> </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+  </div>
+</div>
 
 
 

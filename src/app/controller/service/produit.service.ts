@@ -6,19 +6,23 @@ import {Observable} from "rxjs";
 @Injectable({
   providedIn: 'root'
 })
+
 export class ProduitService {
-private _produit: Produit;
+  private urlBase='http://localhost:8036';
+  private url='/api/v1/produit'
+  private _produit: Produit;
 private _produits: Array<Produit>;
-private url='http://localhost:8036/api/v1/produit/'
-  constructor(private _http:HttpClient) { }
-public init(){
-  for(var _i=0;_i<4;_i++){
-    let myProduit=new Produit();
-    myProduit.id=_i;
-    myProduit.code="c"+_i;
-    myProduit.libelle="l"+_i;
-    this._produits.push(myProduit);
-  }
+private _index:number;
+  constructor(private http:HttpClient) { }
+public findAll(){
+  this.http.get<Array<Produit>>(this.urlBase+this.url+'/').subscribe(
+    data=>{
+    this.produits=data;
+    }
+    ,error => {
+console.log(error);
+    }
+  );
 }
   get produit(): Produit {
   if(this._produit==null){
@@ -41,16 +45,33 @@ public init(){
   set produits(value: Produit[]) {
     this._produits = value;
   }
-  public save (produit:Produit):Observable<Produit>{
-   this._produit=produit;
-    this.produits.push(this._produit);
-  return this._http.post<Produit>(this.url,this.produit);
+  public save (){
+  if(this.produit.id==null){
+    this.http.post(this.urlBase+this.url+'/',this.produit)
+
+          this.produits.push(this.clone(this._produit));
   }
-  public findAll():Observable<Array<Produit>>{
-  return this._http.get<Array<Produit>>(this.url);
+  else{
+this.produits[this._index]=this.clone(this.produit);
+    this.produit=null;
   }
-  public deleteByCode(code:string):Observable<number>{
-  console.log('url==>'+this.url+'code/'+code);
-  return this._http.delete<number>(this.url+'code/'+this.produit.code);
+
   }
+
+  private clone(produit:Produit){
+  let myClone=new Produit();
+  myClone.id=produit.id;
+  myClone.code=produit.code;
+  myClone.libelle=produit.libelle;
+  return myClone;
+  }
+
+
+  public update(index: number, produit: Produit) {
+
+    this.produit=this.clone(produit);
+    this._index=index;
+  }
+
+
 }
