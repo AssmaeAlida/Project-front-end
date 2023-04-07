@@ -6,7 +6,7 @@ export class AppelAchat {
   public ref!: String;
   public dateAppelAchat!: number;
   public totale!: number;
-  public appelAchatProduit!: AppelAchatProduit;
-  public appelAchatProduits!: Array<AppelAchatProduit>;
+  public appelAchatProduits = new Array<AppelAchatProduit>();
+  public appelAchatProduit: AppelAchatProduit;
   public categorieAppelAchat!: CategorieAppelAchat;
 }
