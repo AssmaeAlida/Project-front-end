@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ExpressionBesoinService} from 'src/app/controller/service/expression-besoin.service';
+import {ExpressionbesoinproduitService} from "../../../controller/service/expressionbesoinproduit.service";
 import {ExpressionBesoin} from 'src/app/controller/model/expression-besoin';
 import {ExpressionBesoinProduit} from "../../../controller/model/expression-besoin-produit";
 
@@ -15,11 +16,39 @@ export class ExpressionBesoinCreateComponent implements OnInit{
 
 
 
-  constructor(private expressionBesoinService: ExpressionBesoinService) {
+  constructor(private expressionBesoinService: ExpressionBesoinService, private expressionBesoinProduitService: ExpressionbesoinproduitService) {
   }
 
   ngOnInit(): void {
+    this.findAll();
+
   }
+
+  public deleteByCode(expressionBesoin: ExpressionBesoin , index: number):void{
+    console.log('haa code' + expressionBesoin.code);
+    this.expressionBesoinService.deleteByCode(expressionBesoin.code).subscribe(data => {
+      if (data > 0){
+        this.expressionBesoins.splice(index, 1);
+      }else{
+        alert('DEL ERROR');
+      }
+    });
+  }
+  public deleteByCodee(expressionBesoinProduit: ExpressionBesoinProduit , index: number):void{
+    console.log('haa code' + expressionBesoinProduit.code);
+    this.expressionBesoinProduitService.deleteByCode(expressionBesoinProduit.code).subscribe(data => {
+      if (null != data){
+        this.expressionBesoinProduits.splice(index, 1);
+      }else{
+        alert('DEL ERROR');
+        console.log(data);
+      }
+    });
+  }
+  public findAll():void{
+    this.expressionBesoinService.findAll().subscribe(data=>this.expressionBesoins=data)
+  }
+
   public save(expressionBesoin: ExpressionBesoin): void {
     this.expressionBesoinService.save(expressionBesoin).subscribe(data => {
       if (data != null) {
@@ -28,11 +57,16 @@ export class ExpressionBesoinCreateComponent implements OnInit{
         alert('SAVE ERROR :: EXIST');
       }
     });
+    for (const item of expressionBesoin.expressionBesoinsProduits) {
+      this.expressionBesoinProduitService.save(item);
+    }
   }
   public addExpressionBesoinProduit(): void {
+
     this.expressionBesoinService.addExpressionBesoinProduit();
 
   }
+
   get expressionBesoin(): ExpressionBesoin {
 
     return this.expressionBesoinService.expressionBesoin;
@@ -54,5 +88,10 @@ export class ExpressionBesoinCreateComponent implements OnInit{
   set expressionBesoinProduits(value: Array<ExpressionBesoin>) {
     this.expressionBesoinService.expressionBesoins = value;
   }
+  set expressionBesoins(value: ExpressionBesoin[]) {
+    this.expressionBesoinService.expressionBesoins = value;
+  }
+
+
 
 }

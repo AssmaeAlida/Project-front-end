@@ -7,11 +7,19 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class ProduitService {
-private _produit= new Produit();
-private _produits=new Array<Produit>;
+private _produit: Produit;
+private _produits: Array<Produit>;
 private url='http://localhost:8036/api/v1/produit/'
   constructor(private _http:HttpClient) { }
-
+public init(){
+  for(var _i=0;_i<4;_i++){
+    let myProduit=new Produit();
+    myProduit.id=_i;
+    myProduit.code="c"+_i;
+    myProduit.libelle="l"+_i;
+    this._produits.push(myProduit);
+  }
+}
   get produit(): Produit {
   if(this._produit==null){
     this._produit= new Produit();

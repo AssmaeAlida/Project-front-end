@@ -12,22 +12,27 @@ import {ExpressionBesoinProduit} from "../model/expression-besoin-produit";
 export class ExpressionBesoinService {
    private _expressionBesoin = new ExpressionBesoin();
    private _expressionBesoinProduit = new ExpressionBesoinProduit();
-   private _expressionBesoins = new Array<ExpressionBesoin>;
+   private _expressionBesoins = new Array<ExpressionBesoin>();
    private url =  'http://localhost:8036/api/v1/expressionbesoin/';
 
    public addExpressionBesoinProduit(){
-     this.expressionBesoin.expressionBesoinsProduits.push(this.cloneExpressionBesoinProduit(this.expressionBesoinProduit));
+     this.expressionBesoin.expressionBesoinsProduits.push({...this.expressionBesoinProduit});
    }
 
   public save(expressionBesoin: ExpressionBesoin): Observable<ExpressionBesoin>{
     this._expressionBesoin = expressionBesoin;
-    this.expressionBesoins.push(this._expressionBesoin);
+    this.expressionBesoins.push({...this._expressionBesoin});
     return this._http.post<ExpressionBesoin>(this.url, this._expressionBesoin);
    }
+
    public deleteByCode(code: string): Observable<number>{
     console.log('urll==>' +this.url +'code/' + code);
-     return this._http.delete<number>(this.url + 'code/' + this._expressionBesoin.code);
+     return this._http.delete<number>(this.url + 'code/' + code);
    }
+  public deleteByCodee(code: string): Observable<number>{
+    console.log('urlll ==>' +this.url +'code/' + code);
+    return this._http.delete<number>(this.url + 'code/' + this.expressionBesoinProduit.code);
+  }
    public findAll(): Observable<Array<ExpressionBesoin>>{
      return this._http.get<Array<ExpressionBesoin>>(this.url);
    }

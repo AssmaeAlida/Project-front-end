@@ -3,6 +3,7 @@ import {CategorieAppelAchat} from "../model/categorie-appel-achat.model";
 import {AppelAchat} from "../model/appel-achat.model";
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
+import {AppelAchatProduit} from "../model/appel-achat-produit.model";
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ export class AppelAchatService {
   private _listAppelAchat= new Array<AppelAchat>;
   private url= 'http://localhost:8036/api/v1/appel-achat/';
   private _categorieAppelAchat= new CategorieAppelAchat();
+  private _appelAchatProduit= new AppelAchatProduit();
 
   public save(appelAchat: AppelAchat): Observable<number> {
     return this.http.post<number>(this.url,appelAchat)
@@ -23,12 +25,30 @@ export class AppelAchatService {
     return this.http.delete<number>(this.url+'ref/'+ref)
   }
   constructor(private http:HttpClient) { }
+  public addAppelAchatProduit(){
+    this.appelAchat.appelAchatProduits.push(this.cloneAppelAchatProduit(this.appelAchatProduit));
+  }
+  private cloneAppelAchatProduit(appelAchatProduit: AppelAchatProduit){
+    const myClone = new AppelAchatProduit();
+    myClone.produit = appelAchatProduit.produit;
+    myClone.quantite = appelAchatProduit.quantite;
+    myClone.quantiteLivraison = appelAchatProduit.quantiteLivraison;
+    myClone.quantiteReception = appelAchatProduit.quantiteReception;
+    return myClone;
+  }
   get appelAchat(): AppelAchat {
     return this._appelAchat;
   }
 
   set appelAchat(value: AppelAchat) {
     this._appelAchat = value;
+  }
+  get appelAchatProduit(): AppelAchatProduit {
+    return this._appelAchatProduit;
+  }
+
+  set appelAchatProduit(value: AppelAchatProduit) {
+    this._appelAchatProduit = value;
   }
 
   get listAppelAchat(): AppelAchat[] {

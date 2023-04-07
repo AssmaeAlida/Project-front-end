@@ -1,1 +1,15 @@
-<p>categorie-produit-list works!</p>
+<table class="table table-bordered table-hover my-3" *ngIf="categorieProduits.length!=0">
+  <thead>
+  <th>code</th>
+  <th>libelle</th>
+
+  </thead>
+  <tbody>
+  <tr *ngFor = "let p of categorieProduits;index as i">
+    <td>{{p.code}}</td>
+    <td>{{p.libelle}}</td>
+    <td><span (click)="deleteByCode(p,i)" class="fa fa-trash btn btn-sm"></span> </td>
+  </tr>
+  </tbody>
+</table>
+

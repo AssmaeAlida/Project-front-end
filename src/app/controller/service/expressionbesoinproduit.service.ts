@@ -6,16 +6,17 @@ import {Observable} from "rxjs";
 @Injectable({
   providedIn: 'root'
 })
+
 export class ExpressionbesoinproduitService {
     private _expressionBesoinProduit = new ExpressionBesoinProduit();
-    private _expressionBesoinProduits = new Array<ExpressionBesoinProduit>;
+    private _expressionBesoinProduits = new Array<ExpressionBesoinProduit>();
 
     private url = 'http://localhost:8036/api/v1/expressionBesoinProduit/'
 
   constructor(private _http: HttpClient) { }
 
   public save(expressionBesoinProduit: ExpressionBesoinProduit): Observable<ExpressionBesoinProduit>{
-    return this._http.post<ExpressionBesoinProduit>(this.url, this.expressionBesoinProduit);
+    return this._http.post<ExpressionBesoinProduit>(this.url, expressionBesoinProduit);
   }
 
   public findAll(): Observable<Array<ExpressionBesoinProduit>>{
@@ -28,7 +29,6 @@ export class ExpressionbesoinproduitService {
   }
 
   get expressionBesoinProduit(): ExpressionBesoinProduit {
-
     if(this._expressionBesoinProduit == null){
       this._expressionBesoinProduit = new ExpressionBesoinProduit();
     }

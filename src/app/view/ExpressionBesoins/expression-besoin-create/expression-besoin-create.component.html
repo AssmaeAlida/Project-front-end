@@ -1,67 +1,107 @@
-<div class="card">
-  <div class="card-header">Creation des expressions besoins </div>
-  <div class="card-body">
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card align-content-center card1">
+        <div class="card-header2 text-center titre">Exprimez Vos Besoins</div>
+        <div class="card-body">
 
-    <div class="form-group">
-      <label for="code">code</label>
-      <input id="code" type="text" class="form-control" [(ngModel)]="expressionBesoin.code">
-    </div>
-
-    <div class="form-group">
-      <label for="dateExpressionBesoin">dateExpressionBesoin</label>
-      <input id="dateExpressionBesoin" type="text" class="form-control" [(ngModel)]="expressionBesoin.dateExpressionBesoin">
-    </div>
-
-
-    <div class="card">
-      <div class="card-header">Ajouter Produit</div>
-
-
-      <div class="card-body">
-      <div class="row">
-        <div class="col-md-6"><label>Produit</label>
-          <input type="text" class="form-control" [(ngModel)]="expressionBesoinProduit.produit">
-        </div>
-      </div>
-        <div class="row">
-          <div class="col-md-6"><label>Quantite</label>
-            <input type="number" class="form-control" [(ngModel)]="expressionBesoinProduit.quantite">
+          <div class="form-group">
+            <label for="code">code</label>
+            <input id="code" type="text" class="form-control" [(ngModel)]="expressionBesoin.code">
           </div>
 
+          <div class="form-group">
+            <label for="dateExpressionBesoin">dateExpressionBesoin</label>
+            <input id="dateExpressionBesoin" type="date" class="form-control" [(ngModel)]="expressionBesoin.dateExpressionBesoin">
+          </div>
+
+
+          <div class="card">
+            <div class="card-header text-center ">Expressions Besoins Produits</div>
+
+
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6"><label class="text-danger">code</label>
+                  <input type="text" class="form-control" [(ngModel)]="expressionBesoinProduit.code">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group"><label class="text-danger"> Produit </label>
+                  <select class="form-select" aria-label="Default select example" [(ngModel)]="expressionBesoinProduit.produit">
+                    <option selected>Open this select menu</option>
+                    <option value="One">One</option>
+                    <option value="Two">Two</option>
+                    <option value="Three">Three</option>
+                  </select>
+
+                  </div></div>
+                <div class="row">
+                  <div class="col-md-6"><label class="text-danger" >Quantite</label>
+                    <input type="number" class="form-control" [(ngModel)]="expressionBesoinProduit.quantite">
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="card-footer" >
+                <button class="btn btn-outline-danger " (click)="addExpressionBesoinProduit()">Ajouter</button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header1 text-center ">Liste d'expression besoins produits </div>
+              <div class="card-body">
+                <table class="table table-hover table table-striped">
+                  <thead>
+                  <th>code</th>
+                  <th>Quantite</th>
+                  <th>Produit</th>
+
+                  </thead>
+                  <tbody>
+                  <tr *ngFor = "let ex of expressionBesoin.expressionBesoinsProduits; index as i">
+                    <td>{{ex.code}}</td>
+                    <td>{{ex.quantite}}</td>
+                    <td>{{ex.produit.code}}</td>
+                    <td><span (click)="deleteByCodee(ex,i)" class="fa fa-trash btn btn-sm"></span> </td>
+                  </tr>
+                  </tbody>
+                </table>
+
+              </div>
+
+              <div class="card-footer" >
+
+              </div>
+            </div>
+
+            <div class="card-footer">
+              <button class="btn btn-success bouton  " (click)= "save(expressionBesoin)">Confirmer</button>
+            </div>
+          </div>
         </div>
-      </div>
+    </div></div>
+    <div class="col-md-6">
+      <table class="table table-bordered table-hover my-3" *ngIf="expressionBesoins.length!=0">
+        <thead>
+        <th >Code</th>
+        <th>Total</th>
+        <th>DateExpressionBesoin</th>
+        <th>Actions</th>
 
-      <div class="card-footer" >
-        <button class="btn btn-outline-danger " (click)="addExpressionBesoinProduit()">+</button>
-      </div>
-  </div>
-
-    <div class="card">
-      <div class="card-header">liste des Produits</div>
-      <div class="card-body">
-       <table class="table table-hover table table-striped">
-         <thead>
-         <th>Produit</th>
-         <th>Quantite</th>
-
-         </thead>
-         <tbody>
-         <tr *ngFor = "let e of expressionBesoin.expressionBesoinsProduits">
-           <td>{{e.produit}}</td>
-           <td>{{e.quantite}}</td>
-         </tr>
-         </tbody>
-       </table>
-
-      </div>
-
-      <div class="card-footer" >
-
-      </div>
+        </thead>
+        <tbody>
+        <tr *ngFor = "let e of expressionBesoins; index as i">
+          <td>{{e.code}}</td>
+          <td>{{e.total}}</td>
+          <td>{{e.dateExpressionBesoin}}</td>
+          <td><span (click)="deleteByCode(e,i)" class="fa fa-trash btn btn-sm"></span> </td>
+        </tr>
+        </tbody>
+      </table>
     </div>
 
-  <div class="card-footer">
-  <button class="btn btn-success " (click)= "save(expressionBesoin)">Ajouter</button>
-  </div>
 </div>
 </div>
