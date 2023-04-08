@@ -10,7 +10,4 @@ export class ExpressionBesoin {
   public code: string;
   public dateExpressionBesoin: Date;
   public expressionBesoinsProduitList = new Array<ExpressionBesoinProduit>() ;
-
-
-
 }
