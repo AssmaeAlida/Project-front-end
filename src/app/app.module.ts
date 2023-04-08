@@ -38,6 +38,10 @@ import { CategorieEntiteAdministratifCreateComponent } from './view/CategorieEnt
 import { CategorieEntiteAdministratifListComponent } from './view/CategorieEntiteAdministratif/categorie-entite-administratif-list/categorie-entite-administratif-list.component';
 import {AppelAchatCreateComponent} from "./view/AppelAchat/appel-achat-create/appel-achat-create.component";
 import {AppelAchatListComponent} from "./view/AppelAchat/appel-achat-list/appel-achat-list.component";
+import {CategorieProduit} from "./controller/model/categorie-produit.model";
+import {
+  CategorieProduitCreateComponent
+} from "./view/CategorieProduits/categorie-produit-create/categorie-produit-create.component";
 @NgModule({
     declarations: [
         AppComponent,
@@ -64,7 +68,7 @@ import {AppelAchatListComponent} from "./view/AppelAchat/appel-achat-list/appel-
         BudgetEntiteAdministratifeEditComponent,
         AppelAchatCreateComponent,
         AppelAchatListComponent,
-
+      CategorieProduitCreateComponent
 
     ],
   imports: [
