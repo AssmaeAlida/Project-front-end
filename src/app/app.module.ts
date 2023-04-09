@@ -28,6 +28,7 @@ import {AppelAchatCreateComponent} from "./view/AppelAchat/appel-achat-create/ap
 import {MenuComponent} from "./menu/menu.component";
 import {RouterModule, RouterOutlet, Routes} from "@angular/router";
 import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './view/home/home.component';
 
 
 
@@ -55,7 +56,8 @@ let routes;
     BudgetEntiteAdministratifeViewComponent,
     BudgetEntiteAdministratifeEditComponent,
     AppelAchatCreateComponent,
-    MenuComponent
+    MenuComponent,
+    HomeComponent
 
 
 
