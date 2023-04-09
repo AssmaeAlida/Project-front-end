@@ -68,7 +68,7 @@ export class AppelAchatCreateComponent implements OnInit {
     this.appelAchatService.categorieAppelAchat = value;
   }
   get listAppelAchat(): AppelAchat[] {
-    return this.listAppelAchat;
+    return this.appelAchatService.listAppelAchat;
   }
 
   set listAppelAchat(value: AppelAchat[]) {
