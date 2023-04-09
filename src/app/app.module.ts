@@ -28,7 +28,12 @@ import {AppelAchatCreateComponent} from "./view/AppelAchat/appel-achat-create/ap
 import {MenuComponent} from "./menu/menu.component";
 import {RouterModule, RouterOutlet, Routes} from "@angular/router";
 import { AppRoutingModule } from './app-routing.module';
-import { HomeComponent } from './view/home/home.component';
+import {
+  AppelAchatProduitCreateComponent
+} from "./view/AppelAchatProduit/appel-achat-produit-create/appel-achat-produit-create.component";
+import {
+  AppelAchatProduitListComponent
+} from "./view/AppelAchatProduit/appel-achat-produit-list/appel-achat-produit-list.component";
 
 
 
@@ -56,8 +61,9 @@ let routes;
     BudgetEntiteAdministratifeViewComponent,
     BudgetEntiteAdministratifeEditComponent,
     AppelAchatCreateComponent,
-    MenuComponent,
-    HomeComponent
+    AppelAchatProduitCreateComponent,
+    AppelAchatProduitListComponent,
+    MenuComponent
 
 
 
