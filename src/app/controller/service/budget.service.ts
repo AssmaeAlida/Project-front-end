@@ -42,11 +42,6 @@ export class BudgetService {
   }
 
 
-
-
-
-
-
     public init(){
     for (var _i=1; _i<=4 ;_i++){
       let mybudget= new Budget();
