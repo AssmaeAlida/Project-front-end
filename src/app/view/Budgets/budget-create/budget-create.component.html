@@ -8,23 +8,47 @@
 
     <input type="text"  class="form-control put" [(ngModel)]="budget.annee">
   </div>
-  <div class="col-md-6"><label>montantTotal</label>
-    <input type="text" class="form-control" [(ngModel)]="budget.montantTotal">
-  </div>
+        <div class="col-md-6"><label>montantInvestissement</label>
+          <input type="text" class="form-control" [(ngModel)]="budget.montantInvestissement">
+        </div>
+        <div class="col-md-6"><label>montantFonctionnement</label>
+          <input type="text" class="form-control" [(ngModel)]="budget.montantFonctionnement">
+        </div>
 
 
-  <div class="col-md-6"><label>montantInvestissement</label>
-    <input type="text" class="form-control" [(ngModel)]="budget.montantInvestissement">
-  </div>
-  <div class="col-md-6"><label>montantFonctionnement</label>
-    <input type="text" class="form-control" [(ngModel)]="budget.montantFonctionnement">
-  </div>
+        <div class="card-footer" >
+          <button class="btn title " (click)="save(budget)">valide</button>
+        </div>
 
+        <div class="row justify-content-center">
+          <div class="card my-2 text-center col-8 ">
+            <div class="card-header"> <b><u> liste des Budget</u></b></div>
+            <div class="card-body table">
+              <table class="table table-hover table-striped ">
+                <thead>
+                <th>annee</th>
+                <th>montantTotal</th>
+<th>montantInvestissement</th>
+<th>montantFonctionnement</th>
+
+                </thead>
+
+                <tbody>
+                <tr *ngFor = "let e of budgets; index as i">
+                  <td>{{e.annee}}</td>
+                  <td>{{e.montantTotal}}</td>
+<td>{{e.montantInvestissement}}</td>
+<td>{{e.montantFonctionnement}}</td>
+
+                </tr>
+                </tbody>
+              </table>
+            </div>
       <div class="card-header  text-center text">BudgetEntiteAdministratif</div>
       <div class="card-body">
         <div class="row">
 
-          <div class="col-md-6"><label>ref</label>
+          <div class="col-md-6"><label>reference</label>
             <input type="text" class="form-control" [(ngModel)]="budgetEntiteAdministratif.ref">
           </div>
           <div class="col-md-6"><label> pourcentage</label>
@@ -32,26 +56,51 @@
           </div>
 
 
-          <div class="col-md-6"><label>montantInvestissement</label>
-            <input type="text" class="form-control" [(ngModel)]="budgetEntiteAdministratif.montantInvestissement">
-          </div>
-          <div class="col-md-6"><label>montantFonctionnement</label>
-            <input type="text" class="form-control" [(ngModel)]="budgetEntiteAdministratif.montantFonctionnement">
-          </div>
-          <div class="col-md-6"><label>montantTotal</label>
-            <input type="text" class="form-control" [(ngModel)]="budgetEntiteAdministratif.montantTotal">
-          </div>
 
 
-        </div>
+
+        <div class="card">
+          <div class="card-header">Liste des budgetentite</div>
+          <div class="card-body">
+            <table class="table table-hover table-striped" >
+              <thead>
+              <th>reference</th>
+
+              <th>montantFonctionnement</th>
+              <th>montantInvestissement</th>
+
+              <th>montantTotal</th>
+              <th></th>
+              </thead>
+              <tbody>
+              <tr *ngFor = "let e of budget.budgetEntiteAdministratifliste;index as i">
+                <td>{{e.ref}}</td>
+                <td>{{e.montantFonctionnement}}</td>
+                <td>{{e.montantInvestissement}}</td>
+
+
+
+
+              </tr>
+              </tbody>
+
+            </table>
+
+
+
+          </div>
       </div>
 
 
       <div class="card-footer" >
-        <button class="btn title " (click)=save(budget)>valide</button>
+        <button class="btn title " (click)="addBudgetEntiteAdministratif()">valide</button>
       </div>
 
   </div>
       </div>
     </div>
+</div>
+</div>
+</div>
+  </div>
 </div>

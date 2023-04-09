@@ -27,8 +27,8 @@ export class BudgetEntiteAdministratifeCreateComponent implements OnInit{
    }
 
 
-   public save(): void {
-     this.budgetEntiteAdministratifeService.save(this.BudgetEntiteAdministratif).subscribe(data => {
+   public save(budgetEntiteAdministratif:BudgetEntiteAdministratif): void {
+     this.budgetEntiteAdministratifeService.save(budgetEntiteAdministratif).subscribe(data => {
        if (data != null) {
          alert('SAVE SUCCESS');
        } else {

@@ -3,6 +3,8 @@ import {BudgetService} from "src/app/controller/service/budget.service";
 import {Budget} from "src/app/controller/model/budget";
 import {BudgetEntiteAdministratif} from "../../../controller/model/budget-entite-administratif";
 import {EntiteAdministratif} from "../../../controller/model/entite-administratif.model";
+import {CategorieEntiteAdministratif} from "../../../controller/model/categorie-entite-administratif.model";
+import {BudgetEntiteAdministratifeService} from "../../../controller/service/budget-entite-administratife.service";
 
 
 @Component({
@@ -13,7 +15,7 @@ import {EntiteAdministratif} from "../../../controller/model/entite-administrati
  export class BudgetCreateComponent  implements OnInit{
 
 
-  constructor(private  budgetService : BudgetService
+  constructor(private  budgetService : BudgetService , private  budgetEntiteAdministratifService:BudgetEntiteAdministratifeService
   ) {}
 
   ngOnInit(): void {
@@ -26,18 +28,30 @@ import {EntiteAdministratif} from "../../../controller/model/entite-administrati
     this.budgetService.findByAll().subscribe(data=>this.budgets=data)
   }
 
-  public deleteByAnnee(budget: Budget): void {
+  public deleteByAnnee(budget: Budget, i: number): void {
     this.budgetService.deleteByAnnee(budget.annee).subscribe(data => console.log(data))
   }
-  public save(budget: Budget): void {
-    this.budgetService.save(budget).subscribe(data => {
+  public save(budget:Budget):void{
+    this.budgetService.save(budget).subscribe(data=>
+    {
       if (data != null) {
         alert('SAVE SUCCESS');
       } else {
-        alert('SAVE ERROR ::: ANNEE EXIST');
+        alert('SAVE ERROR :: EXIST');
       }
-    })
+    });
+
+  for (const item of budget.budgetEntiteAdministratifliste) {
+  this.budgetEntiteAdministratifService.save(item);
+}
   }
+
+  public  addBudgetEntiteAdministratif(){
+    this.budgetService.addBudgetEntiteAdministratif()
+  }
+
+
+
 
   get budget(): Budget {
     return this.budgetService.budget;
@@ -48,7 +62,7 @@ import {EntiteAdministratif} from "../../../controller/model/entite-administrati
     this.budgetService.budget = value;
   }
 
-  get budgets(): Budget[] {
+  get budgets(): Array<Budget> {
 
     return this.budgetService.budgets;
   }
