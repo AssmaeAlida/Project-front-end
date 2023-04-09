@@ -18,7 +18,7 @@ export class ProduitService {
   private _index:number;
   constructor(private http:HttpClient) { }
 
- //Getters And Setters
+//Getters And Setters
   get produit(): Produit {
   if(this._produit==null){
     this._produit= new Produit();
@@ -53,13 +53,6 @@ export class ProduitService {
   }
 
 
-  get urlBase(): string {
-    return this._urlBase;
-  }
-
-  set urlBase(value: string) {
-    this._urlBase = value;
-  }
 
 //la methode findAll
   public findAll(): Observable<Array<Produit>>{

@@ -54,4 +54,8 @@ this.findAll()
     this.produitService.findAll().subscribe(data => this.produits=data)
   }
 
+  public deleteByCode( produit: Produit ,index: number):void{
+    this.produits.splice(index, 1);
+
+  }
 }

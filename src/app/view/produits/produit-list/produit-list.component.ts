@@ -13,13 +13,16 @@ constructor(private produitService:ProduitService) {
   ngOnInit():void {
     this.produitService.findAll();
   }
-  public delete( index: number):void{
+  public deleteByCode( produit: Produit ,index: number):void{
         this.produits.splice(index, 1);
 
   }
   public update( index: number,produit:Produit){
    this.produitService.update(index,produit);
 
+  }
+  public findAll():void{
+  this.produitService.findAll();
   }
 
   get produit(): Produit {
@@ -38,6 +41,7 @@ constructor(private produitService:ProduitService) {
   set produits(value: Array<Produit>) {
     this.produitService.produits = value;
   }
+
 
 
 }

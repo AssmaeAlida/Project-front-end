@@ -1,21 +1,18 @@
-<table class="table">
-  <thead>
 
-  <th>Id</th>
-  <th>Code</th>
-  <th>Libelle</th>
-  <th>Supprimer</th>
-  <th>Modifier</th>
+<table class="table table-bordered table-hover my-3" *ngIf="produits.length!=0">
+  <thead>
+  <th>code</th>
+  <th>libelle</th>
+  <th>categorieProduitId</th>
+  <th>Action</th>
 
   </thead>
   <tbody>
-  <tr *ngFor = "let p of produits; index as i">
-    <td>{{p.id}}</td>
-    <td>{{p.code}}</td>
-    <td>{{p.libelle}}</td>
-    <td><span (click)="delete(i)" class="fa fa-trash btn btn-danger"></span> </td>
-    <td><span (click)="update(i,p)" class="fa fa-edit btn btn-warning"></span> </td>
+  <tr *ngFor = "let e of produits;index as i">
+    <td>{{e.code}}</td>
+    <td>{{e.libelle}}</td>
+    <td>{{e.categorieProduit}}</td>
+    <td><span (click)="deleteByCode(e,i)" class="fa fa-trash btn btn-sm"></span> </td>
   </tr>
   </tbody>
 </table>
-

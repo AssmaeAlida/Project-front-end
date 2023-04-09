@@ -9,6 +9,7 @@ import {CategorieProduit} from 'src/app/controller/model/categorie-produit.model
 })
 export class CategorieProduitCreateComponent implements OnInit{
   ngOnInit(): void {
+    this.findAll()
   }
   constructor(private categorieProduitService:CategorieProduitService) {}
 
@@ -30,6 +31,7 @@ export class CategorieProduitCreateComponent implements OnInit{
   set categorieProduits(value: CategorieProduit[]) {
     this.categorieProduitService.categorieProduits = value;
   }
+
 
   //la methode save
   public save(categorieProduit:CategorieProduit):void{
@@ -54,6 +56,9 @@ export class CategorieProduitCreateComponent implements OnInit{
   public findByCode(code:string):void{
     this.categorieProduitService.findByCode(code).subscribe(data=>data => this.categorieProduit = data)
 
+  }
+  public findAll():void{
+    this.categorieProduitService.findAll().subscribe(data=>this.categorieProduits=data)
   }
 
 }
