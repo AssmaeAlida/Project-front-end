@@ -9,11 +9,13 @@ import {
 } from "./view/EntiteAdministratifs/entite-administratif-create/entite-administratif-create.component";
 import {BudgetCreateComponent} from "./view/Budgets/budget-create/budget-create.component";
 import {AppelAchatCreateComponent} from "./view/AppelAchat/appel-achat-create/appel-achat-create.component";
+import {HomeComponent} from "./view/home/home.component";
 
 const routes: Routes =[
   { path: 'entite-administratif-create', component:EntiteAdministratifCreateComponent},
   { path: 'expression-besoin-create', component:ExpressionBesoinCreateComponent},
   { path: 'budget-create', component:BudgetCreateComponent},
+  { path: 'home', component: HomeComponent},
   { path: 'appel-achat-create', component:AppelAchatCreateComponent}
 ]
 

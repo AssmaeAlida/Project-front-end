@@ -9,4 +9,5 @@ export class Budget {
   public  montantTotal : number;
   public  budgetEntiteAdministratifliste = new Array<BudgetEntiteAdministratif>() ;
 
+
 }

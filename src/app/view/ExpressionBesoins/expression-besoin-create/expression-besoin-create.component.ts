@@ -26,6 +26,7 @@ export class ExpressionBesoinCreateComponent implements OnInit{
 
   public deleteByCode(expressionBesoin: ExpressionBesoin , index: number):void{
     console.log('haa code' + expressionBesoin.code);
+
     this.expressionBesoinService.deleteByCode(expressionBesoin.code).subscribe(data => {
       if (data > 0){
         this.expressionBesoins.splice(index, 1);
@@ -51,6 +52,7 @@ export class ExpressionBesoinCreateComponent implements OnInit{
 
   public save(expressionBesoin: ExpressionBesoin): void {
     console.log(expressionBesoin);
+    console.log(expressionBesoin.expressionBesoinsProduitList.length);
     this.expressionBesoinService.save(expressionBesoin).subscribe(data => {
       if (data != null) {
         alert('SAVE SUCCESS');
