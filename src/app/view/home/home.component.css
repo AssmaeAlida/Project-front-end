@@ -1,0 +1,51 @@
+body{
+  background-color: lightblue;
+  position: relative;
+  font-family: Apple Chancery, cursive;
+  height: 800px;
+}
+.text{
+
+  font-size: xxx-large;
+  position: absolute;
+  width: 700px;
+  word-spacing: 20px;
+  top: 180px;
+  left: 50px;
+  z-index: 1;
+  font-weight: bolder;
+
+
+
+}
+img{
+  width: 40%;
+  position: relative;
+  left: 50%;
+  border-radius: 0px 70px 0px 70px;
+top: 20px;
+  border: solid white;
+
+
+
+}
+.ok{
+
+color: white;
+  font-size: x-large;
+  font-weight: bold;
+
+}
+.para{
+  position: absolute;
+left: 200px;
+  top: 550px;
+}
+.par{
+  position: absolute;
+  left: 120px;
+  top: 600px;
+  width: 1000px;
+}
+
+
