@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {BudgetEntiteAdministratifeService} from "../../../controller/service/budget-entite-administratife.service";
 import {BudgetEntiteAdministratif} from "../../../controller/model/budget-entite-administratif";
+import {AppelAchat} from "../../../controller/model/appel-achat.model";
+import {EntiteAdministratif} from "../../../controller/model/entite-administratif.model";
 
 @Component({
   selector: 'app-budget-entite-administratife-list',
@@ -14,6 +16,16 @@ export class BudgetEntiteAdministratifeListComponent  implements  OnInit{
     this._budgetEntiteAdministratifeService.findByAll().subscribe(
       data=> this._budgetEntiteAdministratifeService.BudgetEntiteAdministratifs= data
     );
+  }
+  public deleteByCode(budgetEntiteAdministratif: BudgetEntiteAdministratif , index: number):void{
+
+    this._budgetEntiteAdministratifeService.deleteByRef(budgetEntiteAdministratif.ref).subscribe(data => {
+      if (data > 0){
+        this.BudgetEntiteAdministratifs.splice(index, 1);
+      }else{
+        alert('DEL ERROR');
+      }
+    });
   }
  ngOnInit(): void {
     this.findAll();

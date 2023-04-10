@@ -33,23 +33,16 @@ export class BudgetService {
   }
 
 
-
   public save( budget : Budget):Observable<Budget>{
    this._budget= budget;
     this._budgets.push({...this._budget});
     return this.http.post<Budget>(this.url ,this.budget);
 
+
   }
 
 
-    public init(){
-    for (var _i=1; _i<=4 ;_i++){
-      let mybudget= new Budget();
-      mybudget.annee=_i;
-      mybudget.montantTotal= 10000000;
-      this.budgets.push(mybudget)
-    }
-    }
+
   public deleteByAnnee( annee:number):Observable<Number>{
     console.log('urll==>' +this.url +'annee/' + annee);
     return this.http.delete<Number>(this.url + 'annee/'+ annee);
@@ -61,12 +54,18 @@ export class BudgetService {
  console.log('montantInvestissement='+this.budgetEntiteAdministratif.montantInvestissement);
  console.log('montantFonctionnement='+this.budgetEntiteAdministratif.montantFonctionnement);
 
-    this.budgetEntiteAdministratif.montantTotal +=this.budget.montantTotal * this.budgetEntiteAdministratif.pourcentage;
-  this.budgetEntiteAdministratif.montantInvestissement +=this.budget.montantInvestissement * this.budgetEntiteAdministratif.pourcentage;
-  this.budgetEntiteAdministratif.montantFonctionnement +=this.budget.montantFonctionnement * this.budgetEntiteAdministratif.pourcentage;
+    this.budgetEntiteAdministratif.montantTotal =this.budget.montantTotal * this.budgetEntiteAdministratif.pourcentage;
+  this.budgetEntiteAdministratif.montantInvestissement =this.budget.montantInvestissement * this.budgetEntiteAdministratif.pourcentage;
+  this.budgetEntiteAdministratif.montantFonctionnement =this.budget.montantFonctionnement * this.budgetEntiteAdministratif.pourcentage;
+
     this.budget.budgetEntiteAdministratifliste.push(this.cloneBudgetEntiteAdministratif(this.budgetEntiteAdministratif) );
 
   }
+
+
+
+
+
 
 
   get budget(): Budget {

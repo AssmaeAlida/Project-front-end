@@ -39,6 +39,7 @@
                   <td>{{e.montantTotal}}</td>
                <td>{{e.montantInvestissement}}</td>
                  <td>{{e.montantFonctionnement}}</td>
+                  <td><span (click)="deleteByAnnee(e,i)" class="fa fa-trash btn btn-sm"></span> </td>
 
                 </tr>
                 </tbody>
@@ -73,11 +74,10 @@
               <th></th>
               </thead>
               <tbody>
-              <tr *ngFor = "let e of budget.budgetEntiteAdministratifliste;index as i">
-                <td>{{e.ref}}</td>
-                <td>{{e.montantFonctionnement}}</td>
-                <td>{{e.montantInvestissement}}</td>
-
+              <tr *ngFor = "let c of budget.budgetEntiteAdministratifliste;index as i">
+                <td>{{c.ref}}</td>
+                <td>{{c.montantFonctionnement}}</td>
+                <td>{{c.montantInvestissement}}</td>
 
 
 
@@ -93,12 +93,13 @@
 
 
 
-  </div>
+
       </div>
     </div>
 </div>
 </div>
 </div>
   </div>
+</div>
 </div>
 </div>
