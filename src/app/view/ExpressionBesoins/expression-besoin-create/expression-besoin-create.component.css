@@ -1,13 +1,6 @@
 
-.card1 {
-
-  background-color: azure;
-  font-family: Apple Chancery, cursive;
-  background-image:url("src/assets/image/img.jpg");
-  margin-top: 60px;
-}
-.card{
-  background-image:url("src/assets/image/img.jpg");
+.bena{
+  margin-left: 300px;
 }
 
 .titre{
@@ -19,20 +12,32 @@
 .text1{
   color: chocolate;
 }
-.bouton{
-  font-size: 20px;
-  position: center;
+.add{
+  margin-top: 20px;
+  background-color: chocolate;
 }
-.card-header1{
-  color: burlywood;
 
+.ok{
+  margin-left:800px;
+  background-color: chocolate;
 }
-.card-header{
-  color: burlywood;
+.next{
+  margin-left: 40px;
+  background-color: chocolate;
+}
+
+.list{
+  margin-top: 15px;
+  margin-bottom: 10px;
+  color: black;
+}
+.tabList{
+  margin-left: 200px;
 }
 .banner{
-  height: 650px;
-  background-image:url("src/assets/image/img.jpg");
-
+  height: 1000px;
+  background-image:url("src/assets/image/im.jpg");
+  background-position: center top;
+  background-size: cover;
 }
 

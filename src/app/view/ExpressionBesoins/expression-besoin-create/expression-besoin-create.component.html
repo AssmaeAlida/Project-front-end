@@ -7,21 +7,18 @@
           <div class=" text-center titre">Exprimez Vos Besoins</div>
 
             <div class="form-group" >
-              <label for="code">code</label>
+              <label for="code" class="text1">code</label>
               <input id="code" type="text" class="form-control" [(ngModel)]="expressionBesoin.code">
             </div>
 
             <div class="form-group">
-              <label for="dateExpressionBesoin">dateExpressionBesoin</label>
+              <label for="dateExpressionBesoin" class="text1">dateExpressionBesoin</label>
               <input id="dateExpressionBesoin" type="date" class="form-control" [(ngModel)]="expressionBesoin.dateExpressionBesoin">
             </div>
 
-
-
-
             <div class="form-group" >
-              <label for="code">code</label>
-              <input  type="text1" class="form-control" [(ngModel)]="expressionBesoin.code">
+              <label for="code" class="text1">code</label>
+              <input  type="text1" class="form-control" [(ngModel)]="expressionBesoinProduit.code">
             </div>
 
                   <div >
@@ -35,19 +32,18 @@
 
                     </div></div>
                   <div class="row">
-                    <div class="col-md-6"><label class="text1" >Quantite</label>
+                    <div  class="form-group"><label class="text1" >Quantite</label>
                       <input type="number" class="form-control" [(ngModel)]="expressionBesoinProduit.quantite">
                     </div>
 
                   </div>
-
-                  <button class="btn btn-outline-danger " (click)="addExpressionBesoinProduit()">Ajouter</button>
+                  <button class="btn add " (click)="addExpressionBesoinProduit()">Ajouter</button>
                 </div>
 
-                <div class="text-center ">Liste d'expression besoins produits </div>
-                  <table class="table table-hover table table-striped">
+                <div class="text-center list ">Liste d'expression besoins produits </div>
+                  <table class="table table-hover table table-striped tabList">
                     <thead>
-                    <th>code</th>
+                    <th>Code</th>
                     <th>Quantite</th>
                     <th>Produit</th>
 
@@ -61,23 +57,16 @@
                     </tr>
                     </tbody>
                   </table>
-
                 </div>
-
-
                 </div>
-
-
-                <button class="btn btn-success bouton  " (click)= "save(expressionBesoin)">Confirmer</button>
-                <a class="btn btn-success bouton "  href="appel-achat-create"> SUIVANT </a>
+                <button class="btn  ok " (click)= "save(expressionBesoin)">Confirmer</button>
+                <a class="btn  next"  href="appel-achat-create"> SUIVANT </a>
       <div class="col-md-6">
-        <table class="table table-bordered table-hover my-3" *ngIf="expressionBesoins.length!=0">
+        <table class="table table-bordered table-hover my-3 bena" *ngIf="expressionBesoins.length!=0">
           <thead>
           <th >Code</th>
-
           <th>DateExpressionBesoin</th>
           <th>Actions</th>
-
           </thead>
           <tbody>
           <tr *ngFor = "let e of expressionBesoins; index as i">
