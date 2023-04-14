@@ -16,7 +16,7 @@ export class ExpressionBesoinCreateComponent implements OnInit{
 
 
 
-  constructor(private expressionBesoinService: ExpressionBesoinService, private expressionBesoinProduitService: ExpressionbesoinproduitService) {
+  constructor(private expressionBesoinService: ExpressionBesoinService) {
   }
 
   ngOnInit(): void {
@@ -60,9 +60,6 @@ export class ExpressionBesoinCreateComponent implements OnInit{
         alert('SAVE ERROR :: EXIST');
       }
     });
-    for (const item of expressionBesoin.expressionBesoinsProduitList) {
-      this.expressionBesoinProduitService.save(item);
-    }
   }
   public addExpressionBesoinProduit(): void {
 

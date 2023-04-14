@@ -1,8 +1,16 @@
+.banner
+{
+  background-image: url('../../../../assets/image/business-concept-with-calculator-close-up.jpg');
+  height: 700px;
+  background-position: center ;
+  background-size: cover;
+
+}
 .card1 {
 
   justify-content: center;
   align-items: center;
-  background-color: azure;
+  background-color: lightblue;
 
 }
 .titre{

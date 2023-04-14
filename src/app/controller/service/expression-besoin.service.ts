@@ -17,11 +17,13 @@ export class ExpressionBesoinService {
 
    public addExpressionBesoinProduit(){
      this.expressionBesoin.expressionBesoinsProduitList.push({...this.expressionBesoinProduit});
+     console.log(this._expressionBesoin.expressionBesoinsProduitList)
    }
 
   public save(expressionBesoin: ExpressionBesoin): Observable<ExpressionBesoin>{
     this._expressionBesoin = expressionBesoin;
     this.expressionBesoins.push({...this._expressionBesoin});
+    console.log(this._expressionBesoin.expressionBesoinsProduitList);
     return this._http.post<ExpressionBesoin>(this.url, this._expressionBesoin);
    }
 

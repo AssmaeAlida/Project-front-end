@@ -26,6 +26,7 @@ export class ProduitService {
     return this._produit;
   }
 
+
   set produit(value: Produit) {
     this._produit = value;
   }
