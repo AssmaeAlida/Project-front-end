@@ -1,15 +1,21 @@
+
+
 .title{
-  font-weight: bold;
-  background-color: lightblue;
+  margin-top: 50px;
+  color: chocolate;
+  background-image:url("src/assets/image/im.jpg");
   font-size: 40px;
+  font-family: "Britannic Bold";
 
 }
 
-
+.button{
+  background-color: chocolate;
+}
 .text{
   color: black;
   font-weight: bolder;
-  background-color: lightblue;
+  background-image:url("src/assets/image/im.jpg");
   font-size: 28px;
 
 }
@@ -25,13 +31,13 @@
 
 
 .cardi{
-  background-color: lightblue;
+  background-image:url("src/assets/image/im.jpg");
 }
 
 
 
-.button{
-  background-color: beige;
-  position: center;
-  font-size: 23px ;
+.next{
+  margin-top: 10px;
+  margin-left: 600px;
+  background-color: chocolate;
 }
