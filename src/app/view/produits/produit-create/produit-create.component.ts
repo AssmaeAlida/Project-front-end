@@ -2,8 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ProduitService} from 'src/app/controller/service/produit.service';
 import {Produit} from 'src/app/controller/model/produit.model';
 import {CategorieProduit} from "../../../controller/model/categorie-produit.model";
-import {Observable} from "rxjs";
-import {ExpressionBesoin} from "../../../controller/model/expression-besoin";
+
 
 @Component({
   selector: 'app-produit-create',
@@ -21,9 +20,13 @@ this.findAll()
   get produit(): Produit{
 
     return this.produitService.produit;
-  }get categorieProduit(): CategorieProduit{
+  }
+  get categorieProduit(): CategorieProduit{
 
     return this.produitService.categorieProduit;
+  }
+  set categorieProduit(value: CategorieProduit) {
+    this.produitService.categorieProduit = value;
   }
 
   set produit(value: Produit) {
@@ -41,12 +44,12 @@ this.findAll()
 
   //la methode save
   public save(produit: Produit): void {
-
     this.produitService.save(produit).subscribe(data =>{
       if (data !=null){
         alert(`save succ`);
       }else {
-        alert('not succ')
+        alert('not succ');
+        console.log(data);
       }
     });
   }

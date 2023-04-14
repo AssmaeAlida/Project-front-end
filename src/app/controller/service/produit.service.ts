@@ -14,7 +14,6 @@ export class ProduitService {
   private _produit: Produit;
   private _produits: Array<Produit>;
   private _categorieProduit:CategorieProduit;
-  private _categorieProduits=new Array<CategorieProduit>();
   private _index:number;
   constructor(private http:HttpClient) { }
 

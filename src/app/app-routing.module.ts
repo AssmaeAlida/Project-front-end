@@ -11,6 +11,7 @@ import {BudgetCreateComponent} from "./view/Budgets/budget-create/budget-create.
 import {AppelAchatCreateComponent} from "./view/AppelAchat/appel-achat-create/appel-achat-create.component";
 import {HomeComponent} from "./view/home/home.component";
 import {PageNoteFoundedComponent} from "./view/page-note-founded/page-note-founded.component";
+import { ProduitCreateComponent } from './view/Produits/produit-create/produit-create.component';
 
 const routes: Routes =[
   {path: '' , component:HomeComponent},
@@ -19,6 +20,7 @@ const routes: Routes =[
   { path: 'budget-create', component:BudgetCreateComponent},
   { path: 'home', component: HomeComponent},
   { path: 'appel-achat-create', component:AppelAchatCreateComponent},
+  { path: 'produit-create', component:ProduitCreateComponent},
   {path:'**',component:PageNoteFoundedComponent}
 ]
 

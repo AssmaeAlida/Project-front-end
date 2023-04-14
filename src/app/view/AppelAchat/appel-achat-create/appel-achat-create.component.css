@@ -1,20 +1,44 @@
+
+.bena{
+  margin-left: 300px;
+}
 .titre{
+  margin-top: 60px;
+  color: chocolate;
   font-size: 30px;
   font-family: "Britannic Bold";
 }
-.bouton{
-  font-size: x-large;
+.text1{
+  color: chocolate;
+}
+.add{
+  margin-top: 10px;
+  margin-left: 5px;
+  background-color: chocolate;
 }
 
-.cardd{
-  background-color: azure;
+.ok{
+  margin-top: 20px;
+  margin-left:800px;
+  background-color: chocolate;
 }
-.produit{
-  background-color: aliceblue;
+.next{
+  margin-left: 40px;
+  background-color: chocolate;
 }
-.table{
-  text-align: center;
-  align-content: center;
-  display : inline-table;
-  margin-left : auto; margin-right : auto;
+
+.list{
+  margin-top: 15px;
+  margin-bottom: 10px;
+  color: black;
 }
+.tabList{
+  margin-left: 200px;
+}
+.banner{
+  height: 1000px;
+  background-image:url("src/assets/image/im.jpg");
+  background-position: center top;
+  background-size: cover;
+}
+

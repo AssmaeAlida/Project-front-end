@@ -1,46 +1,43 @@
+<div class="banner">
 <div class="container">
   <div class="row ">
     <div class="col-md_6">
-    <div class="card align-content-center cardd">
-      <div class="card-header text-dark text-center titre">L'Appel Achat
+    <div class=" align-content-center ">
+      <div class=" text-center titre">L'Appel Achat
       </div>
-      <div class="card-body p-4">
 
-        <div class="card p-4 produit">
-          <div class="card-header  text-center "> <b> <u>Appel achat produit</u> </b>
+          <div class="  text-center "> <b> <u>Appel achat produit</u> </b>
           </div>
-          <div class="card-body">
 
             <div class="form-group">
-              <label for="produit" class="text-dark">Produit</label>
+              <label for="produit" class="text1">Produit</label>
               <input id="produit" type="text" class="form-control"
                      [(ngModel)]="appelAchatProduit.produit">
             </div>
             <div class="form-group">
-              <label for="quantite" class="text-dark">Quantite</label>
+              <label for="quantite" class="text1">Quantite</label>
               <input id="quantite" type="text" class="form-control" [(ngModel)]="appelAchatProduit.quantite">
             </div>
 
             <div class="form-group">
-              <label for="quantiteLivraison" class="text-dark">Quantite Livraison</label>
+              <label for="quantiteLivraison" class="text1">Quantite Livraison</label>
               <input id="quantiteLivraison" type="text" class="form-control"
                      [(ngModel)]="appelAchatProduit.quantiteLivraison">
             </div>
 
             <div class="form-group">
-              <label for="quantiteReception" class="text-dark">Quantite Reception</label>
+              <label for="quantiteReception" class="text1">Quantite Reception</label>
               <input id="quantiteReception" type="text" class="form-control"
                      [(ngModel)]="appelAchatProduit.quantiteReception">
             </div>
 
           </div>
-          <div class="card-footer ">
-          <button class="btn btn-outline-primary " (click)="addAppelAchatProduit()">ajouter</button></div>
+          <button class="btn add " (click)="addAppelAchatProduit()">ajouter</button></div>
         </div>
         <div class="row justify-content-center">
-        <div class="card my-2 text-center col-8 ">
-          <div class="card-header"> <b><u> liste des Produits</u></b></div>
-          <div class="card-body table">
+        <div class=" my-2 text-center col-8 ">
+           <b><u> liste des Produits</u></b>
+          <div class=" table">
         <table class="table table-hover table-striped ">
           <thead>
           <th>Produit</th>
@@ -62,39 +59,33 @@
         </table>
           </div>
         </div></div>
-        <div class="form-group">
-          <label for="ref" class="text-danger">Ref</label>
-          <input id="ref" type="text" class="form-control" [(ngModel)]="appelAchat.ref">
-        </div>
 
-        <div class="form-group">
-          <label for="dateAppelAchat" class="text-danger">Date Appel Achat</label>
+    <div class="form-group">
+          <label for="ref"  >Réference</label>
+          <input id="ref" type="text" class="form-control" [(ngModel)]="appelAchat.ref">
+    </div>
+    <div class="form-group">
+          <label for="dateAppelAchat">Date Appel Achat</label>
           <input id="dateAppelAchat" type="date" class="form-control" [(ngModel)]="appelAchat.dateAppelAchat">
         </div>
-
-        <div class="form-group">
-          <label for="categorieAppelAchat" class="text-danger">Categorie </label>
-
+    <div class="form-group">
+          <label for="categorieAppelAchat" >Categorie </label>
           <select class="form-select" id="categorieAppelAchat" [(ngModel)]="appelAchat.categorieAppelAchat">
             <option value="bonDeCommande">Bon de commande</option>
             <option value="marche">Marche</option>
           </select>
           </div>
+    <div class="form-group">
 
-        <div class="form-group">
-          <label for="totale" class="text-danger">Totale</label>
+          <label for="totale" >Totale</label>
           <input id="totale" type="text" class="form-control"
                  [(ngModel)]="appelAchat.totale">
         </div>
-      </div>
-      <div class="card-footer text-center">
-      <button class="btn btn-success bouton" (click)="save(appelAchat)">confirmer</button></div>
-    </div>
-    </div>
+      <div class=" text-center">
+      <button class="btn ok" (click)="save(appelAchat)">confirmer</button></div>
     <div class="row justify-content-center">
-      <div class="card my-2 text-center col-8 ">
-        <div class="card-header"> <b><u> liste des Appel Achat</u></b></div>
-        <div class="card-body table">
+      <div class=" my-2 text-center col-8 ">
+         <b><u> liste des Appel Achat</u></b>
   <table   class="table my-3 table-striped table-hover">
     <thead>
     <th>Ref</th>
@@ -116,8 +107,6 @@
 </div>
   </div>
   </div>
-  </div>
 </div>
-
 
 
