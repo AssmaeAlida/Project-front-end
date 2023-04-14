@@ -2,8 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {BudgetService} from "src/app/controller/service/budget.service";
 import {Budget} from "src/app/controller/model/budget";
 import {BudgetEntiteAdministratif} from "../../../controller/model/budget-entite-administratif";
-import {EntiteAdministratif} from "../../../controller/model/entite-administratif.model";
-import {CategorieEntiteAdministratif} from "../../../controller/model/categorie-entite-administratif.model";
 import {BudgetEntiteAdministratifeService} from "../../../controller/service/budget-entite-administratife.service";
 
 
