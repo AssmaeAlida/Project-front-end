@@ -3,12 +3,10 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-md-6">
-        <div class="card align-content-center card1">
-          <div class="card-header2 text-center titre">Exprimez Vos Besoins</div>
-          <div class="card-body">
+      <div >
+          <div class=" text-center titre">Exprimez Vos Besoins</div>
 
-            <div class="form-group">
+            <div class="form-group" >
               <label for="code">code</label>
               <input id="code" type="text" class="form-control" [(ngModel)]="expressionBesoin.code">
             </div>
@@ -19,43 +17,34 @@
             </div>
 
 
-            <div class="card">
-              <div class="card-header text-center ">Expressions Besoins Produits</div>
 
 
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-md-6"><label class="text-danger">code</label>
-                    <input type="text" class="form-control" [(ngModel)]="expressionBesoinProduit.code">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group"><label class="text-danger"> Produit </label>
+            <div class="form-group" >
+              <label for="code">code</label>
+              <input  type="text1" class="form-control" [(ngModel)]="expressionBesoin.code">
+            </div>
+
+                  <div >
+                    <div class="form-group"><label class="text1"> Produit </label>
                       <select class="form-select" aria-label="Default select example" [(ngModel)]="expressionBesoinProduit.produit">
                         <option selected>Open this select menu</option>
-                        <option value="Ordinateurs de bureau">Ordinateurs de bureau</option>
-                        <option value="Ordinateurs portables ">Ordinateurs portables </option>
-                        <option value="Tablettes ">Tablettes </option>
+                        <option value="One">One</option>
+                        <option value="Two">Two</option>
+                        <option value="Three">Three</option>
                       </select>
 
                     </div></div>
                   <div class="row">
-                    <div class="col-md-6"><label class="text-danger" >Quantite</label>
+                    <div class="col-md-6"><label class="text1" >Quantite</label>
                       <input type="number" class="form-control" [(ngModel)]="expressionBesoinProduit.quantite">
                     </div>
 
                   </div>
-                </div>
 
-                <div class="card-footer" >
                   <button class="btn btn-outline-danger " (click)="addExpressionBesoinProduit()">Ajouter</button>
                 </div>
-              </div>
 
-              <div class="card">
-                <div class="card-header1 text-center ">Liste d'expression besoins produits </div>
-                <div class="card-body">
+                <div class="text-center ">Liste d'expression besoins produits </div>
                   <table class="table table-hover table table-striped">
                     <thead>
                     <th>code</th>
@@ -75,18 +64,12 @@
 
                 </div>
 
-                <div class="card-footer" >
 
                 </div>
-              </div>
 
-              <div class="card-footer">
+
                 <button class="btn btn-success bouton  " (click)= "save(expressionBesoin)">Confirmer</button>
                 <a class="btn btn-success bouton "  href="appel-achat-create"> SUIVANT </a>
-              </div>
-            </div>
-          </div>
-        </div></div>
       <div class="col-md-6">
         <table class="table table-bordered table-hover my-3" *ngIf="expressionBesoins.length!=0">
           <thead>
@@ -106,9 +89,4 @@
         </table>
       </div>
 
-    </div>
-  </div>
-
-
 </div>
-

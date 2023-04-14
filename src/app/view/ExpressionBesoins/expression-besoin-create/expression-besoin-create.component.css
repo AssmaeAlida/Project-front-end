@@ -1,22 +1,23 @@
-.banner
-{
-  background-image: url('../../../../assets/image/business-concept-with-calculator-close-up.jpg');
-  height: 700px;
-  background-position: center ;
-  background-size: cover;
 
-}
 .card1 {
 
-  justify-content: center;
-  align-items: center;
-  background-color: lightblue;
-
+  background-color: azure;
+  font-family: Apple Chancery, cursive;
+  background-image:url("src/assets/image/img.jpg");
+  margin-top: 60px;
 }
+.card{
+  background-image:url("src/assets/image/img.jpg");
+}
+
 .titre{
+  margin-top: 60px;
   color: chocolate;
   font-size: 30px;
   font-family: "Britannic Bold";
+}
+.text1{
+  color: chocolate;
 }
 .bouton{
   font-size: 20px;
@@ -28,5 +29,10 @@
 }
 .card-header{
   color: burlywood;
+}
+.banner{
+  height: 650px;
+  background-image:url("src/assets/image/img.jpg");
+
 }
 
