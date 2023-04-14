@@ -1,15 +1,4 @@
 
-.card1 {
-
-  background-color: azure;
-  font-family: Apple Chancery, cursive;
-  background-image:url("src/assets/image/img.jpg");
-  margin-top: 60px;
-}
-.card{
-  background-image:url("src/assets/image/img.jpg");
-}
-
 .titre{
   margin-top: 60px;
   color: chocolate;
@@ -31,8 +20,9 @@
   color: burlywood;
 }
 .banner{
-  height: 650px;
-  background-image:url("src/assets/image/img.jpg");
-
+  height: 800px;
+  background-image:url("src/assets/image/rm141-nunny-10b.jpg");
+  background-position: center top;
+  background-size: cover;
 }
 
