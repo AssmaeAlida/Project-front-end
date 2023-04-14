@@ -1,34 +1,36 @@
+.banner{
+  height: 1000px;
+  background-image:url("src/assets/image/im.jpg");
+  background-position: center top;
+  background-size: cover;
+}
+.bena{
+  margin-left: 300px;
+}
 .title{
-  font-weight: bold;
-  font-family:Verdana;
-  font-size: 25px;
-  background-color: lightblue;
+  margin-top: 80px;
+  color: chocolate;
+  font-size: 30px;
+  font-family: "Britannic Bold";
 }
-.text{
-  color: white;
-  font-weight: bolder;
-  font-family: Garamond;
-  font-size: 20px;
+.text1{
+  color: chocolate;
 }
-.card{
-  background-color: lightblue;
+.ok{
+  margin-left:650px;
+  background-color: chocolate;
 }
-.put{
-  font-family: Verdana;
-  font-weight: bold;
+.next{
+  margin-left: 100px;
+  background-color: chocolate;
+}
+.hey{
+  margin-top: 30px;
+}
+
+.list{
+  margin-top: 10px;
+  margin-bottom: 10px;
   color: black;
-}
-.liste{
-  background-color: lightblue;
-  color: black;
-  font-weight: bold;
-  font-size: 20px;
-  text-align: center;
-}
-#list{
-  color:white;
-}
-.btn{
-  background-color: white;
 }
 

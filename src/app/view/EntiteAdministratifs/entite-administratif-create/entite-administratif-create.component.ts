@@ -24,8 +24,15 @@ export class EntiteAdministratifCreateComponent implements OnInit {
     this.entiteAdministratifService.findAll().subscribe(data=>this.entiteAdministratifs=data)
   }
 
-  public deleteByCode(entiteAdministratif: EntiteAdministratif): void {
-    this.entiteAdministratifService.deleteByCode(entiteAdministratif.code).subscribe(data => console.log(data))
+  public deleteByCode(entiteAdministratif: EntiteAdministratif , index: number):void{
+
+    this.entiteAdministratifService.deleteByCode(entiteAdministratif.code).subscribe(data => {
+      if (data > 0){
+        this.entiteAdministratifs.splice(index, 1);
+      }else{
+        alert('DEL ERROR');
+      }
+    });
   }
 
   public save(entiteAdministratif:EntiteAdministratif): void {
