@@ -26,7 +26,15 @@ export class ExpressionBesoinCreateComponent implements OnInit{
     this.findAll();
 
   }
+  showProductForm = false;
 
+  showCreateProductForm() {
+    this.showProductForm = true;
+  }
+
+  hideCreateProductForm() {
+    this.showProductForm = false;
+  }
   get produits(): Array<Produit> {
     return this.produitService.produits;
   }

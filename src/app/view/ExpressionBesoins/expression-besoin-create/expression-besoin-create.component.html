@@ -14,18 +14,17 @@
               <input id="dateExpressionBesoin" type="date" class="form-control" [(ngModel)]="expressionBesoin.dateExpressionBesoin">
             </div>
 
-            <div class="form-group" >
-              <label for="code" class="text1">code</label>
-              <input  type="text1" class="form-control" [(ngModel)]="expressionBesoinProduit.code">
-            </div>
-
                   <div >
                     <div class="form-group"><label class="text1"> Produit </label>
-                      <a class="btn  next"  href="produit-create"> Ajouter ce produit </a>
+                      <button type="button" class="btn next" (click)="showCreateProductForm()">Ajouter nouveau produit</button>
 
+                      <div *ngIf="showProductForm">
+                        <app-produit-create></app-produit-create>
+                        <button type="button" class="btn btn-secondary" (click)="hideCreateProductForm()">Annuler</button>
+                      </div>
                       <select class="form-select" aria-label="Default select example" [(ngModel)]="expressionBesoinProduit.produit">
                         <option selected>Open this select menu</option>
-                        <option *ngFor = "let produit of produits ; index as i" [ngValue]="produit" >{{produit.code}}</option>
+                        <option *ngFor = "let produit of produits ; index as i" [ngValue]="produit" >{{produit.libelle}}</option>
 
                       </select>
                     </div></div>
