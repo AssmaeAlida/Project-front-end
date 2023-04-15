@@ -5,7 +5,7 @@
           <div class=" text-center titre">Exprimez Vos Besoins</div>
 
             <div class="form-group" >
-              <label for="code" class="text1">code</label>
+              <label for="code" class="text1">code d'une expression besoin</label>
               <input id="code" type="text" class="form-control" [(ngModel)]="expressionBesoin.code">
             </div>
 
@@ -13,6 +13,10 @@
               <label for="dateExpressionBesoin" class="text1">dateExpressionBesoin</label>
               <input id="dateExpressionBesoin" type="date" class="form-control" [(ngModel)]="expressionBesoin.dateExpressionBesoin">
             </div>
+          <div class="form-group">
+             <label for="code" class="text1">code d'une expression besoin produit</label>
+             <input id="code " type="text" class="form-control" [(ngModel)]="expressionBesoinProduit.code">
+          </div>
 
                   <div >
                     <div class="form-group"><label class="text1"> Produit </label>
