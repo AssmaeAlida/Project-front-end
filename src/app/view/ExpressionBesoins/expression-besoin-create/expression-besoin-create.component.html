@@ -25,9 +25,8 @@
 
                       <select class="form-select" aria-label="Default select example" [(ngModel)]="expressionBesoinProduit.produit">
                         <option selected>Open this select menu</option>
-                        <option value="Ordinateurs de bureau">Ordinateurs de bureau</option>
-                        <option value="Ordinateurs portables ">Ordinateurs portables </option>
-                        <option value="Tablettes">Tablettes</option>
+                        <option *ngFor = "let produit of produits ; index as i" [ngValue]="produit" >{{produit.code}}</option>
+
                       </select>
                     </div></div>
                   <div class="row">
@@ -75,6 +74,7 @@
           </tr>
           </tbody>
         </table>
+
       </div>
 
 </div>

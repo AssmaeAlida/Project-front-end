@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ProduitService} from 'src/app/controller/service/produit.service';
 import {Produit} from 'src/app/controller/model/produit.model';
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-produit-list',
@@ -8,10 +9,14 @@ import {Produit} from 'src/app/controller/model/produit.model';
   styleUrls: ['./produit-list.component.css']
 })
 export class ProduitListComponent implements OnInit{
-constructor(private produitService:ProduitService) {
-}
+
+  products: Observable<Array<Produit>>
+  constructor(private produitService:ProduitService) {
+  }
+
   ngOnInit():void {
-    this.produitService.findAll();
+    // this.produitService.findAll();
+    this.products = this.produitService.findAll();
   }
   public deleteByCode( produit: Produit ,index: number):void{
         this.produits.splice(index, 1);

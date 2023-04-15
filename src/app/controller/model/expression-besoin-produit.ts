@@ -4,7 +4,7 @@ import {Produit} from "./produit.model";
 export class ExpressionBesoinProduit  {
   public id: number;
   public code: string;
-  public produit: Produit;
+  public produit: string;
   public expressionBesoin: ExpressionBesoin;
   public quantite: number;
   public quantiteAccordee: number;

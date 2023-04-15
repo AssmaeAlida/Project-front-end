@@ -3,6 +3,9 @@ import {ExpressionBesoinService} from 'src/app/controller/service/expression-bes
 import {ExpressionbesoinproduitService} from "../../../controller/service/expressionbesoinproduit.service";
 import {ExpressionBesoin} from 'src/app/controller/model/expression-besoin';
 import {ExpressionBesoinProduit} from "../../../controller/model/expression-besoin-produit";
+import {ProduitService} from "../../../controller/service/produit.service";
+import {Observable} from "rxjs";
+import {Produit} from "../../../controller/model/produit.model";
 
 
 
@@ -16,12 +19,20 @@ export class ExpressionBesoinCreateComponent implements OnInit{
 
 
 
-  constructor(private expressionBesoinService: ExpressionBesoinService) {
+  constructor(private expressionBesoinService: ExpressionBesoinService, private produitService : ProduitService) {
   }
 
   ngOnInit(): void {
     this.findAll();
 
+  }
+
+  get produits(): Array<Produit> {
+    return this.produitService.produits;
+  }
+
+  set produits(value: Array<Produit>) {
+    this.produitService.produits = value;
   }
 
   public deleteByCode(expressionBesoin: ExpressionBesoin , index: number):void{
@@ -47,7 +58,8 @@ export class ExpressionBesoinCreateComponent implements OnInit{
     });
   }*/
   public findAll():void{
-    this.expressionBesoinService.findAll().subscribe(data=>this.expressionBesoins=data)
+    this.expressionBesoinService.findAll().subscribe(data=>this.expressionBesoins=data);
+    this.produitService.findAll().subscribe(data => this.produits=data);
   }
 
   public save(expressionBesoin: ExpressionBesoin): void {
