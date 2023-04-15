@@ -1,4 +1,4 @@
-import {createEnvironmentInjector, Injectable } from '@angular/core';
+import {createEnvironmentInjector, getNgModuleById, Injectable} from '@angular/core';
 import {Budget} from "../model/budget";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
@@ -6,6 +6,7 @@ import {ExpressionBesoin} from "../model/expression-besoin";
 import {BudgetEntiteAdministratif} from "../model/budget-entite-administratif";
 import {ExpressionBesoinProduit} from "../model/expression-besoin-produit";
 import {CategorieEntiteAdministratif} from "../model/categorie-entite-administratif.model";
+import {formatNumber} from "@angular/common";
 
 
 
@@ -35,7 +36,12 @@ export class BudgetService {
 
   public save( budget : Budget):Observable<Budget>{
    this._budget= budget;
+
+     this.budget.montantTotal= 120000000000;
+
+
     this._budgets.push({...this._budget});
+
     return this.http.post<Budget>(this.url ,this.budget);
 
 
@@ -61,9 +67,6 @@ export class BudgetService {
     this.budget.budgetEntiteAdministratifliste.push(this.cloneBudgetEntiteAdministratif(this.budgetEntiteAdministratif) );
 
   }
-
-
-
 
 
 
@@ -108,12 +111,15 @@ export class BudgetService {
     myClone.ref = budgetEntiteAdministratif.ref;
     myClone.montantInvestissement =budgetEntiteAdministratif.montantInvestissement;
     myClone.montantFonctionnement =budgetEntiteAdministratif.montantFonctionnement;
+    myClone.montantTotal =budgetEntiteAdministratif.montantTotal;
+
     return myClone ;
   }
   private cloneBudget(budget: Budget) {
     const myClone = new Budget();
     myClone.annee = budget.annee;
-    myClone.montantTotal = budget.montantTotal;
+    myClone.montantTotal = budget.montantTotal ;
+
     return myClone ;
   }
 }

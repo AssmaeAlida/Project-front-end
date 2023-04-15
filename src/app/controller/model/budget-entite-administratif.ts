@@ -13,7 +13,7 @@ export class BudgetEntiteAdministratif {
   public  pourcentage : number;
 
   constructor() {
-    this.montantTotal=0;
+
     this.montantFonctionnement=0;
     this.montantInvestissement=0;
   }

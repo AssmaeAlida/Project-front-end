@@ -10,4 +10,5 @@ export class Budget {
   public  budgetEntiteAdministratifliste = new Array<BudgetEntiteAdministratif>() ;
 
 
+
 }
