@@ -1,0 +1,62 @@
+body{
+  background-color: lightgray;
+  height: 790px;
+  font-family: Apple Chancery, cursive;
+
+}
+.ok{
+  position: absolute;
+  top: 20%;
+  left: 45%;
+  color: gray;
+}
+.error{
+  position: absolute;
+  top: 39%;
+  left: 42%;
+  font-weight: bolder;
+  font-size: 160px;
+  font-family: Garamond;
+  color: gray;
+
+}
+.page{
+  position: absolute;
+  top: 67%;
+  left: 35%;
+  font-weight: bolder;
+  color: linen;
+  font-size: xxx-large;
+  word-spacing: 6px;
+
+}
+.up{
+  width: 560px;
+  position: absolute;
+  top: 80%;
+  left: 31%;
+  color: gray;
+  font-weight: bold;
+
+}
+.text{
+  left: 35%;
+  top: 84%;
+}
+.boutton{
+  color: gray;
+position: absolute;
+  left: 36%;
+  top: 90%;
+  border-radius: 10px 10px 10px 10px;
+  border: none;
+  width: 400px;
+  font-weight: bolder;
+  font-size: larger;
+  text-align: center;
+  background-color: gray;
+}
+a:link{
+  text-decoration: none;
+  color: gray;
+}
