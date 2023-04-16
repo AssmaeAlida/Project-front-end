@@ -45,7 +45,7 @@ this.findAll()
   //la methode save
   public save(produit: Produit): void {
     this.produitService.save(produit).subscribe(data =>{
-      if (data !=null){
+      if (data >0){
         alert(`save succ`);
       }else {
         alert('not succ');

@@ -35,7 +35,7 @@ import {
   AppelAchatProduitListComponent
 } from "./view/AppelAchatProduit/appel-achat-produit-list/appel-achat-produit-list.component";
 import {HomeComponent} from "./view/home/home.component";
-
+import { CategorieProduitCreateComponent } from "./view/CategorieProduits/categorie-produit-create/categorie-produit-create.component";
 
 
 
@@ -65,8 +65,8 @@ let routes;
     AppelAchatProduitCreateComponent,
     AppelAchatProduitListComponent,
     MenuComponent,
-    HomeComponent
-
+    HomeComponent,
+    CategorieProduitCreateComponent
 
 
   ],

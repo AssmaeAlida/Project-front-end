@@ -13,7 +13,7 @@ export class ProduitService {
   private url='http://localhost:8036/api/v1/produit/'
   private _produit: Produit;
   private _produits: Array<Produit>;
-  private _categorieProduit:CategorieProduit;
+  private _categorieProduit=new CategorieProduit();
   private _index:number;
   constructor(private http:HttpClient) { }
 
