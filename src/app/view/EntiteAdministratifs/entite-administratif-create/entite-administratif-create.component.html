@@ -30,7 +30,7 @@
       </div>
 <div class="hey">
   <button class="btn ok " (click)= "save(entiteAdministratif)">Confirmer</button>
-  <a class="btn next"  href="budget-create"> SUIVANT </a>
+
 </div>
   <div class="col-md-6">
     <table class="table table-bordered table-hover my-3 bena" *ngIf="entiteAdministratifs.length!=0">
@@ -48,6 +48,24 @@
       </tbody>
     </table>
   </div>
+    <div class="row">
+      <div class=" text-center title">Chercher l'Entité Administratif</div>
+
+      <div class="form-group" >
+        <label for="codeee" class="text1">code</label>
+        <input id="codeee" type="text" class="form-control" [(ngModel)]="entiteAdministratif.code">
+      </div>
+
+      <div class="form-group" >
+        <label for="code" class="text1">Libelle</label>
+        <input  type="text1" class="form-control"disabled="disabled" [(ngModel)]="entiteAdministratif.libelle">
+      </div>
+
+      <div class="hey">
+        <button class="btn ok " (click)= "findByCode(entiteAdministratif.code)">Chercher</button>
+        <a class="btn next"  href="budget-create"> SUIVANT </a>
+      </div>
+    </div>
   </div>
 </div>
 

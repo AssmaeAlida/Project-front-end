@@ -18,7 +18,15 @@ export class EntiteAdministratifCreateComponent implements OnInit {
   }
 
   public findByCode(code: String): void {
-    this.entiteAdministratifService.findByCode(code).subscribe(data => this.entiteAdministratif = data)
+    this.entiteAdministratifService.findByCode(code).subscribe(data => {
+      this.entiteAdministratif = data
+      if (data==null){
+        alert('rien a afficher')
+      }
+      else {
+        alert('exist')
+      }
+    })
   }
   public findAll():void{
     this.entiteAdministratifService.findAll().subscribe(data=>this.entiteAdministratifs=data)
